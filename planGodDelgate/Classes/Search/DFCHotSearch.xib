@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DFCHotSearch">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-WS-h1B">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_search_hotsearch" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-lw-d6n">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="Evz-nT-coD"/>
+                                <constraint firstAttribute="width" constant="22" id="gdS-M4-NLZ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热搜 词语" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR8-aJ-wkb">
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UR8-aJ-wkb" secondAttribute="trailing" id="GST-qG-WOb"/>
+                        <constraint firstItem="Iyb-lw-d6n" firstAttribute="top" secondItem="aIG-WS-h1B" secondAttribute="top" constant="3" id="OOK-nO-dC9"/>
+                        <constraint firstAttribute="height" constant="25" id="QJy-Fp-6pC"/>
+                        <constraint firstItem="Iyb-lw-d6n" firstAttribute="leading" secondItem="aIG-WS-h1B" secondAttribute="leading" constant="22" id="Qxl-0k-93p"/>
+                        <constraint firstItem="UR8-aJ-wkb" firstAttribute="leading" secondItem="Iyb-lw-d6n" secondAttribute="trailing" constant="15" id="clg-zk-1oo"/>
+                        <constraint firstItem="UR8-aJ-wkb" firstAttribute="top" secondItem="aIG-WS-h1B" secondAttribute="top" constant="5" id="r0K-C4-al0"/>
+                        <constraint firstAttribute="bottom" secondItem="UR8-aJ-wkb" secondAttribute="bottom" id="uy5-gS-Klq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RB7-YE-hFP"/>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RB7-YE-hFP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bl0-yH-c1R"/>
+                <constraint firstItem="RB7-YE-hFP" firstAttribute="top" secondItem="aIG-WS-h1B" secondAttribute="bottom" id="FzP-Gn-Jd4"/>
+                <constraint firstAttribute="trailing" secondItem="RB7-YE-hFP" secondAttribute="trailing" id="Sw7-hP-KHI"/>
+                <constraint firstItem="aIG-WS-h1B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mZk-OZ-BIe"/>
+                <constraint firstAttribute="trailing" secondItem="aIG-WS-h1B" secondAttribute="trailing" id="uqo-vK-AjD"/>
+                <constraint firstItem="aIG-WS-h1B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ye6-L4-UUI"/>
+                <constraint firstAttribute="bottom" secondItem="RB7-YE-hFP" secondAttribute="bottom" id="ywb-jT-KH9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="hotSearchView" destination="RB7-YE-hFP" id="hJ9-P5-fHi"/>
+            </connections>
+            <point key="canvasLocation" x="419" y="290.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_search_hotsearch" width="21" height="21"/>
+    </resources>
+</document>
