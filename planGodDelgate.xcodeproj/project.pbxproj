@@ -130,8 +130,6 @@
 		B3FF5F831EC9942700EF1176 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF5F7D1EC9942700EF1176 /* FMResultSet.m */; };
 		B3FF5F841EC9942700EF1176 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3FF5F7E1EC9942700EF1176 /* Info.plist */; };
 		B3FF5F8D1EC9980A00EF1176 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF5F8C1EC9980A00EF1176 /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
-		B3FF5F941EC99A4900EF1176 /* DM_OrmSQLInsertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF5F8F1EC99A4900EF1176 /* DM_OrmSQLInsertBuilder.swift */; };
-		B3FF5F951EC99A4900EF1176 /* SQL_DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF5F911EC99A4900EF1176 /* SQL_DataBase.swift */; };
 		B3FF5F961EC99A4900EF1176 /* SQLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF5F931EC99A4900EF1176 /* SQLDatabase.m */; };
 /* End PBXBuildFile section */
 
@@ -391,9 +389,6 @@
 		B3FF5F7D1EC9942700EF1176 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		B3FF5F7E1EC9942700EF1176 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3FF5F8C1EC9980A00EF1176 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		B3FF5F8F1EC99A4900EF1176 /* DM_OrmSQLInsertBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DM_OrmSQLInsertBuilder.swift; sourceTree = "<group>"; };
-		B3FF5F901EC99A4900EF1176 /* planGodDelgate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "planGodDelgate-Bridging-Header.h"; sourceTree = "<group>"; };
-		B3FF5F911EC99A4900EF1176 /* SQL_DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQL_DataBase.swift; sourceTree = "<group>"; };
 		B3FF5F921EC99A4900EF1176 /* SQLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLDatabase.h; sourceTree = "<group>"; };
 		B3FF5F931EC99A4900EF1176 /* SQLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -914,9 +909,6 @@
 		B3FF5F8E1EC99A4900EF1176 /* SQL */ = {
 			isa = PBXGroup;
 			children = (
-				B3FF5F8F1EC99A4900EF1176 /* DM_OrmSQLInsertBuilder.swift */,
-				B3FF5F901EC99A4900EF1176 /* planGodDelgate-Bridging-Header.h */,
-				B3FF5F911EC99A4900EF1176 /* SQL_DataBase.swift */,
 				B3FF5F921EC99A4900EF1176 /* SQLDatabase.h */,
 				B3FF5F931EC99A4900EF1176 /* SQLDatabase.m */,
 				B3A3F5BA1ECAD8C6009BC5F6 /* DFCDBModel.h */,
@@ -1106,7 +1098,6 @@
 				B376FA321DB9AA870066E995 /* DFCGodLaunchVC.m in Sources */,
 				B35E06A61EAF2AF2004AD0F0 /* GoodKFCModel.m in Sources */,
 				B3C13FDF1D867B8600463689 /* DFCNewCode.m in Sources */,
-				B3FF5F951EC99A4900EF1176 /* SQL_DataBase.swift in Sources */,
 				B31E05EB1DB898860061E55D /* NSUserDefaultsManager.m in Sources */,
 				B31A721E1DBA08FB002B43E5 /* HotContentCell.m in Sources */,
 				B37691F41D87F59B00801DC6 /* DFCPayment.m in Sources */,
@@ -1160,7 +1151,6 @@
 				B3C13FE61D8684A800463689 /* DFCWebViewCode.m in Sources */,
 				B3BB0BF21D81644B00D6466A /* BannerView.m in Sources */,
 				B3CFCE891D9121EC0096A25D /* AFImageDownloader.m in Sources */,
-				B3FF5F941EC99A4900EF1176 /* DM_OrmSQLInsertBuilder.swift in Sources */,
 				B3CFCE851D9121EC0096A25D /* AFURLRequestSerialization.m in Sources */,
 				B3BB0BF31D81644B00D6466A /* GoodlistCell.m in Sources */,
 				B373B6631E973E1800DEE23D /* HomeDataSourceViewModel.m in Sources */,
@@ -1378,7 +1368,6 @@
 		B3BB0B261D81065800D6466A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = planGodDelgateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1391,7 +1380,6 @@
 		B3BB0B271D81065800D6466A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = planGodDelgateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1404,7 +1392,6 @@
 		B3BB0B291D81065800D6466A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = planGodDelgateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.delgate.planGodDelgateUITests;
@@ -1417,7 +1404,6 @@
 		B3BB0B2A1D81065800D6466A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = planGodDelgateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.delgate.planGodDelgateUITests;
