@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B301C5AB1EE902410005AB96 /* rsacert.crt in Resources */ = {isa = PBXBuildFile; fileRef = B301C5AA1EE902410005AB96 /* rsacert.crt */; };
+		B301C5AD1EE902B50005AB96 /* p.p12 in Resources */ = {isa = PBXBuildFile; fileRef = B301C5AC1EE902B50005AB96 /* p.p12 */; };
 		B30FAFC11EE6770E00D64F8D /* NSDateComponentsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B30FAFC01EE6770E00D64F8D /* NSDateComponentsObject.m */; };
 		B30FAFC61EE6A43300D64F8D /* pageControlCurrentDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B30FAFC41EE6A43300D64F8D /* pageControlCurrentDot@2x.png */; };
 		B30FAFC71EE6A43300D64F8D /* pageControlCurrentDot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B30FAFC51EE6A43300D64F8D /* pageControlCurrentDot@3x.png */; };
@@ -162,6 +164,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B301C5AA1EE902410005AB96 /* rsacert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.crt; sourceTree = "<group>"; };
+		B301C5AC1EE902B50005AB96 /* p.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p.p12; sourceTree = "<group>"; };
 		B30FAFBC1EE64A4600D64F8D /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
 		B30FAFBF1EE6770E00D64F8D /* NSDateComponentsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsObject.h; sourceTree = "<group>"; };
 		B30FAFC01EE6770E00D64F8D /* NSDateComponentsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsObject.m; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 		B373B65A1E973CBD00DEE23D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B301C5AC1EE902B50005AB96 /* p.p12 */,
+				B301C5AA1EE902410005AB96 /* rsacert.crt */,
 				B373B6611E973E1800DEE23D /* HomeDataSourceViewModel.h */,
 				B373B6621E973E1800DEE23D /* HomeDataSourceViewModel.m */,
 				B32409631EE515A000269F00 /* DownloadTask.h */,
@@ -1030,6 +1036,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B301C5AD1EE902B50005AB96 /* p.p12 in Resources */,
 				B388A6721EB06A6C00059137 /* GoodFlashsaleCell.xib in Resources */,
 				B373B66E1E97537000DEE23D /* img_network_error_571x262@2x.png in Resources */,
 				B373B6721E97537000DEE23D /* img_network_reload4_160x160@2x.png in Resources */,
@@ -1052,6 +1059,7 @@
 				B35E06A81EAF2E02004AD0F0 /* kfc.plist in Resources */,
 				B3BB0C181D8185E600D6466A /* DFCAccountCell.xib in Resources */,
 				B37691E71D87E6BC00801DC6 /* DFCDeliAddress.xib in Resources */,
+				B301C5AB1EE902410005AB96 /* rsacert.crt in Resources */,
 				B373B6801E97832400DEE23D /* advert.jpeg in Resources */,
 				B3C13FEF1D86A5DF00463689 /* ShopCarCount.xib in Resources */,
 				B3D4DBEE1D82BE21003EF7D9 /* HistoryViewCell.xib in Resources */,
