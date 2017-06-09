@@ -30,4 +30,16 @@ static NSUInteger  const rowHeight = 200;
     return rowHeight+titleSize.height;
 }
 
+#pragma mark Private
+/**
+ 计算字符串长度
+ 
+ @param string string
+ @param font font
+ @return 字符串长度
+ */
++ (CGFloat)getWidthWithString:(NSString *)string font:(UIFont *)font {
+    NSDictionary *attrs = @{NSFontAttributeName : font};
+    return [string boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size.width;
+}
 @end

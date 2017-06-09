@@ -166,6 +166,7 @@
 /* Begin PBXFileReference section */
 		B301C5AA1EE902410005AB96 /* rsacert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.crt; sourceTree = "<group>"; };
 		B301C5AC1EE902B50005AB96 /* p.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p.p12; sourceTree = "<group>"; };
+		B301C5B31EE951380005AB96 /* planGodsFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = planGodsFile.pch; sourceTree = "<group>"; };
 		B30FAFBC1EE64A4600D64F8D /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
 		B30FAFBF1EE6770E00D64F8D /* NSDateComponentsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateComponentsObject.h; sourceTree = "<group>"; };
 		B30FAFC01EE6770E00D64F8D /* NSDateComponentsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsObject.m; sourceTree = "<group>"; };
@@ -754,6 +755,7 @@
 				B3C6A19C1DC99BAB00272F51 /* IMColor.m */,
 				B30FAFBF1EE6770E00D64F8D /* NSDateComponentsObject.h */,
 				B30FAFC01EE6770E00D64F8D /* NSDateComponentsObject.m */,
+				B301C5B31EE951380005AB96 /* planGodsFile.pch */,
 			);
 			path = Macros;
 			sourceTree = "<group>";

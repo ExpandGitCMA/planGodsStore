@@ -53,6 +53,8 @@
 static const NSInteger page = 1;//标签数量
 @implementation PlanHomeVC
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -258,6 +260,7 @@ static const NSInteger page = 1;//标签数量
 //     [DFCLocalNotificationCenter sendLocalNotification:@"加入购物车成功" subTitle:nil body:@"加入购物车"];
     [[DFCShowMessage sharedView]showMessage:@"加入购物车成功" duration:2.0f];
 }
+
 
 -(void)btnFileFn:(UISegmentedControl *)sender{
     NSInteger index = sender.selectedSegmentIndex;

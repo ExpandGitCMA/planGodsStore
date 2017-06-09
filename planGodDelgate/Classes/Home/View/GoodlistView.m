@@ -40,8 +40,9 @@
 @property(nonatomic,copy)NSString*hourLabel;
 @property(nonatomic,copy)NSString*minuteLabel;
 @property(nonatomic,copy)NSString*secondLabel;
-@property(nonatomic,weak)DFCHotContent *hotContent;
+@property(nonatomic,strong)DFCHotContent *hotContent;
 @property(nonatomic,weak)BannerCollection *collection;
+@property(nonatomic,strong)NSMutableDictionary *params;
 @end
 
 @implementation GoodlistView
@@ -90,11 +91,78 @@
             case 2:
               num = _arraySource.count;
             break;
-            
         default:
             break;
     }
      return num;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger  section= indexPath.section;
+    CGFloat     tableViewHeight = 0.0;
+    switch (section) {
+        case 0:{
+            tableViewHeight =  187;
+        }break;
+            
+        case 1:{
+            _imgFlashsale = [UIImage imageNamed:@"img_home_default_flashsale"];
+            tableViewHeight =  _imgFlashsale.size.height+20;
+        }break;
+            
+        case 2:{
+
+            GoodModel*model = [_arraySource SafetyObjectAtIndex:indexPath.row];
+            tableViewHeight  =  [model.goodsNname sizeWithForRowHeight];
+        }
+            break;
+        default:
+            break;
+    }
+    return  tableViewHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0|| section==1) {
+        return 0;
+    }
+    return 60;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [self hotContent];
+}
+
+-(DFCHotContent*)hotContent{
+    if (!_hotContent) {
+        _hotContent = [[DFCHotContent alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), 50) HotSearch:@[@"精选推荐",@"手机数码",@"运动健康",@"礼品鲜花",@"生活旅行",@"图书音像",@"家居生活"]];
+        _hotContent.delegate = self;
+        [self selectStatus:_hotContent page:0];
+    }
+    return _hotContent;
+}
+-(void)selectStatus:(DFCHotContent*)selectStatus  page:(NSInteger)page{
+    
+    //采用字典缓存网络数据
+    /*
+    NSArray *dataSource = [[self params] objectForKey:[NSString stringWithFormat:@"%ld",(long)page]];
+    if (dataSource.count) {
+        _arraySource = dataSource;
+       
+    }else{
+       [[self params] SafetySetObject:_arraySource forKey:[NSString stringWithFormat:@"%ld",(long)page]];
+        [_tableView reloadData];
+    }
+    */
+    DEBUG_NSLog(@"%@",[self params]);
+}
+
+-(NSMutableDictionary*)params{
+    if (!_params) {
+        _params = [[NSMutableDictionary alloc]init];
+    }
+    return _params;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -104,19 +172,11 @@
             case 0:{
                 GoodBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BannerCell"];
                 tableCell = cell;
-            }break;
+            } break;
             
             case 1:{
                 GoodFlashsaleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlashsaleCell"];
                 [cell addTapGestureTarget:self action:@selector(goodTapGes:)];
-//                __weak typeof(self) weakSelf = self;
-//              cell.goodGesBlock = ^(NSInteger goodGes) {
-//                  if ([ weakSelf.delegate respondsToSelector:@selector(flashsale:message:)]) {
-//                      [ weakSelf.delegate flashsale:self message:goodGes];
-//                   }
-//
-//              };
-                //[cell setGoodGesBlock:^(NSInteger  goodGes){ }];
                  tableCell = cell;
                 
             }break;
@@ -135,37 +195,6 @@
     return tableCell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-     NSInteger  section= indexPath.section;
-    CGFloat     tableViewHeight = 0.0;
-    switch (section) {
-            case 0:{
-                tableViewHeight =  187;
-            }break;
-           
-            case 1:{
-                 _imgFlashsale = [UIImage imageNamed:@"img_home_default_flashsale"];
-                tableViewHeight =  _imgFlashsale.size.height+20;
-            }break;
-            
-            case 2:{
-            
-                GoodModel*model = [_arraySource SafetyObjectAtIndex:indexPath.row];
-                
-                tableViewHeight  =  [model.goodsNname sizeWithForRowHeight];
-
-            }
-            break;
-        default:
-            break;
-    }
-    
-    return  tableViewHeight;
-
-}
-
-
-
 -(UIButton*)btnTop{
     _btnTop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _btnTop.frame =CGRectMake(self.frame.size.width-50, self.frame.size.height-50, 40, 40);
@@ -180,6 +209,7 @@
     _btnTop.hidden=YES;
     [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
+
 //开始拖拽视图
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     //开始拖拽滑动的距离
@@ -189,7 +219,6 @@
     }else{
         _startScroll = scrollView.contentOffset.y;
     }
-    //[_collection removeTimer];
 }
 //完成拖拽
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;{
@@ -200,24 +229,22 @@
     }
     //往上拉 并且 滚动视图超过一个屏幕
     if(_startScroll - _endScroll>10 && _tableView.contentOffset.y>1000){
-        _btnTop.hidden = NO;
         [UIView animateWithDuration:0.25 animations:^{
-           _hotContent.hidden = NO;
+           _btnTop.hidden = NO;
         }];
     }else{
         [UIView animateWithDuration:0.25 animations:^{
             _btnTop.hidden = YES;
-            _hotContent.hidden = YES;
         }];
     }
-
+    
 }
 
 /*
  当用户停止的时候调用
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-   // [_collection addTimer];
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
