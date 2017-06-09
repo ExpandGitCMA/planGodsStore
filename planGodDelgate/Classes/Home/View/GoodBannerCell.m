@@ -29,7 +29,6 @@ static NSUInteger  const SGMaxSections = 100;
     [self pageControl];
 }
 
-
 -(UICollectionView*)collectionView{
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -66,7 +65,6 @@ static NSUInteger  const SGMaxSections = 100;
     return self.arraySource.count;
 }
 
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return SGMaxSections;
 }
@@ -74,15 +72,18 @@ static NSUInteger  const SGMaxSections = 100;
 -(UIPageControl*)pageControl{
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.frame.size.height-30, self.frame.size.width, 30)];
-        _pageControl.pageIndicatorTintColor=[UIColor whiteColor];
+//        _pageControl.pageIndicatorTintColor=[UIColor whiteColor];
          _pageControl.numberOfPages=self.arraySource.count;
         _pageControl.currentPage = 0;
-        _pageControl.currentPageIndicatorTintColor = UIColorFromRGB(DefaulColor);
+//        _pageControl.currentPageIndicatorTintColor = UIColorFromRGB(DefaulColor);
         _pageControl.enabled = NO;
         
-//      [_pageControl  setValue:[UIImage imageNamed:@"pageControlDot"] forKeyPath:@"currentPageImage"];
-//      
-//        [_pageControl setValue:[UIImage imageNamed:@"pageControlCurrentDot"] forKeyPath:@"pageImage"];
+//        _pageControl.currentPageIndicatorTintColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"img_home_banner_select"]];
+//        
+//        _pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"img_home_banner_unselect"]];
+        
+        [_pageControl  setValue:[UIImage imageNamed:@"img_home_banner_select"] forKeyPath:@"currentPageImage"];
+        [_pageControl setValue:[UIImage imageNamed:@"img_home_banner_unselect"] forKeyPath:@"pageImage"];
         
         [self addSubview:_pageControl];
         [self addTimer];
@@ -103,31 +104,26 @@ static NSUInteger  const SGMaxSections = 100;
 
 -(void)nextpages{
     if (_arraySource.count == 0) return;
-       //DEBUG_NSLog(@"ssssssssssss");
+    
     NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
    
     NSIndexPath *resetCurrentIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:SGMaxSections / 2];
     [self.collectionView scrollToItemAtIndexPath:resetCurrentIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
- 
     NSInteger nextItem = resetCurrentIndexPath.item + 1;
     NSInteger nextSection = resetCurrentIndexPath.section;
     if (nextItem == _arraySource.count) {
         nextItem = 0;
         nextSection++;
     }
-    
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
     [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
     
 }
 
-
-
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     _pageControl.currentPage = (int) (scrollView.contentOffset.x/scrollView.bounds.size.width)%(_arraySource.count );
 }
-
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self removeTimer];

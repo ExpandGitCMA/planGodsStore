@@ -25,6 +25,15 @@
 		B33F12F41EB3130600AFF8A2 /* NSString+NSStringBlankString.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F12F31EB3130600AFF8A2 /* NSString+NSStringBlankString.m */; };
 		B33F12FD1EB34B2C00AFF8A2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F12FC1EB34B2C00AFF8A2 /* Person.m */; };
 		B34ACF531EADD391002783C1 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B34ACF521EADD391002783C1 /* Resource.bundle */; };
+		B34CA8711EEA9C1A005F60D1 /* NSObject+NotNull.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8701EEA9C1A005F60D1 /* NSObject+NotNull.m */; };
+		B34CA8741EEAA316005F60D1 /* UIButton+ActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8731EEAA316005F60D1 /* UIButton+ActionButton.m */; };
+		B34CA8771EEAA5F2005F60D1 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8761EEAA5F2005F60D1 /* UIColor+RandomColor.m */; };
+		B34CA87A1EEAA750005F60D1 /* UILabel+AlignLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8791EEAA750005F60D1 /* UILabel+AlignLabel.m */; };
+		B34CA87D1EEAA7CF005F60D1 /* UIView+UIView_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA87C1EEAA7CF005F60D1 /* UIView+UIView_Utils.m */; };
+		B34CA8801EEAAA42005F60D1 /* UIImage+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA87F1EEAAA42005F60D1 /* UIImage+WB.m */; };
+		B34CA8831EEAAB7B005F60D1 /* UITabBarController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8821EEAAB7B005F60D1 /* UITabBarController+Extend.m */; };
+		B34CA8851EEAB2C3005F60D1 /* img_home_banner_unselect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B34CA8841EEAB2C3005F60D1 /* img_home_banner_unselect@2x.png */; };
+		B34CA8871EEAB2D3005F60D1 /* img_home_banner_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B34CA8861EEAB2D3005F60D1 /* img_home_banner_select@2x.png */; };
 		B34E80561EC4169C004FA664 /* NSViewCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = B34E80551EC4169C004FA664 /* NSViewCopy.m */; };
 		B35E06A61EAF2AF2004AD0F0 /* GoodKFCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B35E06A51EAF2AF2004AD0F0 /* GoodKFCModel.m */; };
 		B35E06A81EAF2E02004AD0F0 /* kfc.plist in Resources */ = {isa = PBXBuildFile; fileRef = B35E06A71EAF2E02004AD0F0 /* kfc.plist */; };
@@ -195,6 +204,22 @@
 		B33F12FB1EB34B2C00AFF8A2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		B33F12FC1EB34B2C00AFF8A2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		B34ACF521EADD391002783C1 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		B34CA86F1EEA9C1A005F60D1 /* NSObject+NotNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NotNull.h"; sourceTree = "<group>"; };
+		B34CA8701EEA9C1A005F60D1 /* NSObject+NotNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NotNull.m"; sourceTree = "<group>"; };
+		B34CA8721EEAA316005F60D1 /* UIButton+ActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ActionButton.h"; sourceTree = "<group>"; };
+		B34CA8731EEAA316005F60D1 /* UIButton+ActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ActionButton.m"; sourceTree = "<group>"; };
+		B34CA8751EEAA5F2005F60D1 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		B34CA8761EEAA5F2005F60D1 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		B34CA8781EEAA750005F60D1 /* UILabel+AlignLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AlignLabel.h"; sourceTree = "<group>"; };
+		B34CA8791EEAA750005F60D1 /* UILabel+AlignLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AlignLabel.m"; sourceTree = "<group>"; };
+		B34CA87B1EEAA7CF005F60D1 /* UIView+UIView_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIView_Utils.h"; sourceTree = "<group>"; };
+		B34CA87C1EEAA7CF005F60D1 /* UIView+UIView_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIView_Utils.m"; sourceTree = "<group>"; };
+		B34CA87E1EEAAA42005F60D1 /* UIImage+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WB.h"; sourceTree = "<group>"; };
+		B34CA87F1EEAAA42005F60D1 /* UIImage+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WB.m"; sourceTree = "<group>"; };
+		B34CA8811EEAAB7B005F60D1 /* UITabBarController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Extend.h"; sourceTree = "<group>"; };
+		B34CA8821EEAAB7B005F60D1 /* UITabBarController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Extend.m"; sourceTree = "<group>"; };
+		B34CA8841EEAB2C3005F60D1 /* img_home_banner_unselect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_home_banner_unselect@2x.png"; sourceTree = "<group>"; };
+		B34CA8861EEAB2D3005F60D1 /* img_home_banner_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_home_banner_select@2x.png"; sourceTree = "<group>"; };
 		B34E80541EC4169C004FA664 /* NSViewCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSViewCopy.h; sourceTree = "<group>"; };
 		B34E80551EC4169C004FA664 /* NSViewCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSViewCopy.m; sourceTree = "<group>"; };
 		B35E06A41EAF2AF2004AD0F0 /* GoodKFCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodKFCModel.h; sourceTree = "<group>"; };
@@ -476,6 +501,8 @@
 		B373B6771E97795D00DEE23D /* 购物车 */ = {
 			isa = PBXGroup;
 			children = (
+				B34CA8861EEAB2D3005F60D1 /* img_home_banner_select@2x.png */,
+				B34CA8841EEAB2C3005F60D1 /* img_home_banner_unselect@2x.png */,
 				B30FAFC41EE6A43300D64F8D /* pageControlCurrentDot@2x.png */,
 				B30FAFC81EE6A44300D64F8D /* pageControlDot@2x.png */,
 				B30FAFC91EE6A44300D64F8D /* pageControlDot@3x.png */,
@@ -724,6 +751,8 @@
 		B3BB0B9E1D81460500D6466A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B34CA8811EEAAB7B005F60D1 /* UITabBarController+Extend.h */,
+				B34CA8821EEAAB7B005F60D1 /* UITabBarController+Extend.m */,
 				B370B3E81E8F9D8100BDD0DA /* Safety.h */,
 				B370B3E91E8F9D8100BDD0DA /* Safety.m */,
 				B380E1901DCB275200D8DD77 /* NSString+IMAdditions.h */,
@@ -742,6 +771,18 @@
 				B33F12F01EB311A200AFF8A2 /* NSArray+NSArryisExist.m */,
 				B33F12F21EB3130600AFF8A2 /* NSString+NSStringBlankString.h */,
 				B33F12F31EB3130600AFF8A2 /* NSString+NSStringBlankString.m */,
+				B34CA86F1EEA9C1A005F60D1 /* NSObject+NotNull.h */,
+				B34CA8701EEA9C1A005F60D1 /* NSObject+NotNull.m */,
+				B34CA8721EEAA316005F60D1 /* UIButton+ActionButton.h */,
+				B34CA8731EEAA316005F60D1 /* UIButton+ActionButton.m */,
+				B34CA8751EEAA5F2005F60D1 /* UIColor+RandomColor.h */,
+				B34CA8761EEAA5F2005F60D1 /* UIColor+RandomColor.m */,
+				B34CA8781EEAA750005F60D1 /* UILabel+AlignLabel.h */,
+				B34CA8791EEAA750005F60D1 /* UILabel+AlignLabel.m */,
+				B34CA87B1EEAA7CF005F60D1 /* UIView+UIView_Utils.h */,
+				B34CA87C1EEAA7CF005F60D1 /* UIView+UIView_Utils.m */,
+				B34CA87E1EEAAA42005F60D1 /* UIImage+WB.h */,
+				B34CA87F1EEAAA42005F60D1 /* UIImage+WB.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1047,6 +1088,7 @@
 				B37691F61D87F6C700801DC6 /* DFCPayment.xib in Resources */,
 				B3C6A1A81DC9D5C000272F51 /* BannerCell.xib in Resources */,
 				B3D4DBF01D82BEDF003EF7D9 /* DFCHotSearch.xib in Resources */,
+				B34CA8871EEAB2D3005F60D1 /* img_home_banner_select@2x.png in Resources */,
 				B30FAFCA1EE6A44300D64F8D /* pageControlDot@2x.png in Resources */,
 				B373B6701E97537000DEE23D /* img_network_reload2_160x160@2x.png in Resources */,
 				B3FF5F841EC9942700EF1176 /* Info.plist in Resources */,
@@ -1054,6 +1096,7 @@
 				B3BB0BF41D81644B00D6466A /* GoodlistCell.xib in Resources */,
 				B3BB0B681D810AD800D6466A /* LaunchScreen.storyboard in Resources */,
 				B3BB0B671D810AD800D6466A /* Assets.xcassets in Resources */,
+				B34CA8851EEAB2C3005F60D1 /* img_home_banner_unselect@2x.png in Resources */,
 				B30FAFC71EE6A43300D64F8D /* pageControlCurrentDot@3x.png in Resources */,
 				B3A3F5C81ECAE6D1009BC5F6 /* empty_placeholder.png in Resources */,
 				B373B6731E97537000DEE23D /* img_network_reload5_160x160@2x.png in Resources */,
@@ -1123,6 +1166,7 @@
 				B3BB0B651D810AD800D6466A /* main.m in Sources */,
 				B3A3F5BF1ECAD98E009BC5F6 /* UserModel.m in Sources */,
 				B37691F01D87F21B00801DC6 /* DFCOrderCell.m in Sources */,
+				B34CA8741EEAA316005F60D1 /* UIButton+ActionButton.m in Sources */,
 				B3C4A3AC1E31A8A300167084 /* DFCMyDataSource.m in Sources */,
 				B373B6661E974E3400DEE23D /* NetworkLoading.m in Sources */,
 				B3BB0B921D811D4000D6466A /* PlanSearchVC.m in Sources */,
@@ -1144,7 +1188,9 @@
 				B3D4DBE31D825D1E003EF7D9 /* ZYTextFieldSearch.m in Sources */,
 				B370B3EA1E8F9D8100BDD0DA /* Safety.m in Sources */,
 				B3C6A19D1DC99BAB00272F51 /* IMColor.m in Sources */,
+				B34CA8831EEAAB7B005F60D1 /* UITabBarController+Extend.m in Sources */,
 				B3C13FD91D8648BD00463689 /* DFCSCANCode.m in Sources */,
+				B34CA8771EEAA5F2005F60D1 /* UIColor+RandomColor.m in Sources */,
 				B3D4DBF31D82F08D003EF7D9 /* DAOManager.m in Sources */,
 				B3CFCE831D9121EC0096A25D /* AFNetworkReachabilityManager.m in Sources */,
 				B3FB039E1DB770CB0071D05F /* DFCEnteryApp.m in Sources */,
@@ -1158,6 +1204,7 @@
 				B32087671DBDA9DB008893E2 /* FlashGoods.m in Sources */,
 				B3BB0BF51D81644B00D6466A /* GoodlistView.m in Sources */,
 				B3BB0B631D810AD800D6466A /* AppDelegate.m in Sources */,
+				B34CA8711EEA9C1A005F60D1 /* NSObject+NotNull.m in Sources */,
 				B3C13FE61D8684A800463689 /* DFCWebViewCode.m in Sources */,
 				B3BB0BF21D81644B00D6466A /* BannerView.m in Sources */,
 				B3CFCE891D9121EC0096A25D /* AFImageDownloader.m in Sources */,
@@ -1167,7 +1214,9 @@
 				B388A66C1EB06A0600059137 /* GoodBannerCell.m in Sources */,
 				B32BDF7D1DF9572300C63789 /* DFCLocalNotificationCenter.m in Sources */,
 				B3C6A1A31DC9D14600272F51 /* BannerModel.m in Sources */,
+				B34CA8801EEAAA42005F60D1 /* UIImage+WB.m in Sources */,
 				B3C6A1A01DC9CE3800272F51 /* BannerCollection.m in Sources */,
+				B34CA87D1EEAA7CF005F60D1 /* UIView+UIView_Utils.m in Sources */,
 				B31E05E81DB872D30061E55D /* DFCLaunchView.m in Sources */,
 				B3A98E661ECECCF400BBBF7D /* mztools.c in Sources */,
 				B3C6A1A71DC9D5C000272F51 /* BannerCell.m in Sources */,
@@ -1176,6 +1225,7 @@
 				B3A98E671ECECCF400BBBF7D /* unzip.c in Sources */,
 				B3CFCE8A1D9121EC0096A25D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B3CFCE8C1D9121EC0096A25D /* UIButton+AFNetworking.m in Sources */,
+				B34CA87A1EEAA750005F60D1 /* UILabel+AlignLabel.m in Sources */,
 				B3CFCE881D9121EC0096A25D /* AFAutoPurgingImageCache.m in Sources */,
 				B3CFCE841D9121EC0096A25D /* AFSecurityPolicy.m in Sources */,
 				B3A98E681ECECCF400BBBF7D /* zip.c in Sources */,

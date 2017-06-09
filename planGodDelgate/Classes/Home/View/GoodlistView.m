@@ -26,7 +26,6 @@
     dispatch_source_t _timer;
 }
 @property(nonatomic,copy)NSArray *arraySource;
-@property(nonatomic,copy)NSMutableArray *bannerSource;
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)UIButton*btnTop;
 @property(nonatomic,weak)BannerView*banner;
@@ -50,10 +49,7 @@
 -(instancetype)initWithFrame:(CGRect)frame arraySource:(NSArray *)arraySource{
     if (self = [super initWithFrame:frame]) {
         _arraySource = arraySource;
-        [self bannerSource];
         [self initView];
-        //[self bannerViewSource];
-        //[self bannerModelSource];
         [self btnTop];
     }
     return self;
@@ -138,24 +134,22 @@
     if (!_hotContent) {
         _hotContent = [[DFCHotContent alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), 50) HotSearch:@[@"精选推荐",@"手机数码",@"运动健康",@"礼品鲜花",@"生活旅行",@"图书音像",@"家居生活"]];
         _hotContent.delegate = self;
-        [self selectStatus:_hotContent page:0];
     }
     return _hotContent;
 }
 -(void)selectStatus:(DFCHotContent*)selectStatus  page:(NSInteger)page{
     
     //采用字典缓存网络数据
-    /*
+   /*
     NSArray *dataSource = [[self params] objectForKey:[NSString stringWithFormat:@"%ld",(long)page]];
     if (dataSource.count) {
         _arraySource = dataSource;
-       
+         [_tableView reloadData];
     }else{
        [[self params] SafetySetObject:_arraySource forKey:[NSString stringWithFormat:@"%ld",(long)page]];
-        [_tableView reloadData];
     }
     */
-    DEBUG_NSLog(@"%@",[self params]);
+    
 }
 
 -(NSMutableDictionary*)params{
@@ -276,13 +270,6 @@
     if ( [ weakSelf.delegate  respondsToSelector:@selector(flashsale:message:)]&&weakSelf.delegate) {
          [ weakSelf.delegate flashsale:self message:sender.view.tag];
     }
-}
-
--(NSMutableArray*)bannerSource{
-    if (!_bannerSource) {
-         _bannerSource = [[NSMutableArray alloc]init];
-    }
-    return _bannerSource;
 }
 
 -(void)tableViewRefresh{
