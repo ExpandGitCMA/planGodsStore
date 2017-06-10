@@ -30,7 +30,7 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-   _data = [NSMutableArray arrayWithArray:@[@"秋冬季热卖",@"纯牛奶",@"牛仔裤",@"居家抽纸巾",@"菲力牛排套餐",@"四件套",@"焦糖味瓜子",@"长款",@"时尚背包"]];
+   _data = [NSMutableArray arrayWithArray:@[@"防螨夏被",@"小月饼",@"泰国进口",@"夏装t恤",@"灯具",@"品牌折扣",@"进口商品",@"芒果"]];
     
     UICollectionViewFlowLayout *fallLayout = [[UICollectionViewFlowLayout alloc]init];
     fallLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
