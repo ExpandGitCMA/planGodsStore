@@ -110,6 +110,8 @@
 		B3C6A1A31DC9D14600272F51 /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A1A21DC9D14600272F51 /* BannerModel.m */; };
 		B3C6A1A71DC9D5C000272F51 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A1A51DC9D5C000272F51 /* BannerCell.m */; };
 		B3C6A1A81DC9D5C000272F51 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C6A1A61DC9D5C000272F51 /* BannerCell.xib */; };
+		B3CD35CC1EEE6FE300D17FFF /* NSCopyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CD35CB1EEE6FE300D17FFF /* NSCopyModel.m */; };
+		B3CD35CF1EEE98D500D17FFF /* NSString+ANFString.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CD35CE1EEE98D500D17FFF /* NSString+ANFString.m */; };
 		B3CD58851EC5B10600DC6887 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CD58841EC5B10600DC6887 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B3CFCE821D9121EC0096A25D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFCE611D9121EC0096A25D /* AFHTTPSessionManager.m */; };
 		B3CFCE831D9121EC0096A25D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFCE641D9121EC0096A25D /* AFNetworkReachabilityManager.m */; };
@@ -357,6 +359,10 @@
 		B3C6A1A41DC9D5C000272F51 /* BannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
 		B3C6A1A51DC9D5C000272F51 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
 		B3C6A1A61DC9D5C000272F51 /* BannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
+		B3CD35CA1EEE6FE300D17FFF /* NSCopyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCopyModel.h; sourceTree = "<group>"; };
+		B3CD35CB1EEE6FE300D17FFF /* NSCopyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCopyModel.m; sourceTree = "<group>"; };
+		B3CD35CD1EEE98D500D17FFF /* NSString+ANFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ANFString.h"; sourceTree = "<group>"; };
+		B3CD35CE1EEE98D500D17FFF /* NSString+ANFString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ANFString.m"; sourceTree = "<group>"; };
 		B3CD58831EC5B10600DC6887 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		B3CD58841EC5B10600DC6887 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		B3CFCE601D9121EC0096A25D /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -751,6 +757,8 @@
 		B3BB0B9E1D81460500D6466A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B3CD35CD1EEE98D500D17FFF /* NSString+ANFString.h */,
+				B3CD35CE1EEE98D500D17FFF /* NSString+ANFString.m */,
 				B34CA8811EEAAB7B005F60D1 /* UITabBarController+Extend.h */,
 				B34CA8821EEAAB7B005F60D1 /* UITabBarController+Extend.m */,
 				B370B3E81E8F9D8100BDD0DA /* Safety.h */,
@@ -841,6 +849,8 @@
 				B32087661DBDA9DB008893E2 /* FlashGoods.m */,
 				B34E80541EC4169C004FA664 /* NSViewCopy.h */,
 				B34E80551EC4169C004FA664 /* NSViewCopy.m */,
+				B3CD35CA1EEE6FE300D17FFF /* NSCopyModel.h */,
+				B3CD35CB1EEE6FE300D17FFF /* NSCopyModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1173,6 +1183,7 @@
 				B37691E51D87E69700801DC6 /* DFCDeliAddress.m in Sources */,
 				B3FF5F831EC9942700EF1176 /* FMResultSet.m in Sources */,
 				B31A721B1DBA08D2002B43E5 /* DFCHotContent.m in Sources */,
+				B3CD35CF1EEE98D500D17FFF /* NSString+ANFString.m in Sources */,
 				B3BB0BF11D81644B00D6466A /* PlanHomeVC.m in Sources */,
 				B3D4DBED1D82BE21003EF7D9 /* HistoryViewCell.m in Sources */,
 				B3A3F5BC1ECAD8C6009BC5F6 /* DFCDBModel.m in Sources */,
@@ -1198,6 +1209,7 @@
 				B3FF5F811EC9942700EF1176 /* FMDatabasePool.m in Sources */,
 				B380E1921DCB275200D8DD77 /* NSString+IMAdditions.m in Sources */,
 				B3A98E691ECECCF400BBBF7D /* SSZipArchive.m in Sources */,
+				B3CD35CC1EEE6FE300D17FFF /* NSCopyModel.m in Sources */,
 				B365C5A01DC88F3500855687 /* CalculateFileSize.m in Sources */,
 				B388A6711EB06A6C00059137 /* GoodFlashsaleCell.m in Sources */,
 				B3C13FE21D8680A000463689 /* UIView+SDExtension.m in Sources */,
