@@ -119,6 +119,7 @@ static NSUInteger  const SGMaxSections = 100;
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
     [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
     
+    
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -189,5 +190,6 @@ static NSUInteger  const SGMaxSections = 100;
 
     // Configure the view for the selected state
 }
+
 
 @end

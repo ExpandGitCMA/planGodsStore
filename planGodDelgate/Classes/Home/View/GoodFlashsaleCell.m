@@ -38,22 +38,6 @@
 }
 
 
-//-(UILabel*)timerLabel{
-//    if (!_timerLabel) {
-//
-//        _timerLabel = [[UILabel alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-150)/2, 0, 150, 27)];
-//        _timerLabel.backgroundColor = [UIColor whiteColor];
-//        _timerLabel.textAlignment = NSTextAlignmentCenter;
-//        _timerLabel.textColor = UIColorFromRGB(SearchTypeColor);
-//        _timerLabel.font = [UIFont systemFontOfSize:15];
-////        _timerLabel.center = self.center;
-//        [self timerlayer];
-//        [self tiemerDate];
-//        [_imgUrl addSubview:_timerLabel];
-//    }
-//    return _timerLabel;
-//}
-
 -(NSString *)getyyyymmdd{
     NSDate *now = [NSDate date];
     NSDateFormatter *formatDay = [[NSDateFormatter alloc] init];
