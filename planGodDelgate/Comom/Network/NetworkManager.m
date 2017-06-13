@@ -24,15 +24,16 @@
     return [self shareNetworkManager];
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return [[NetworkManager allocWithZone:zone] init];
+}
 +(instancetype)shareNetworkManager{
-    static dispatch_once_t dispatch;
     static NetworkManager *network = nil;
-    dispatch_once(&dispatch , ^{
-        if (network==nil) {
-            //保证唯一实例化对象
-            network = [[super allocWithZone:NULL] init];
-        }
-    });
+    if (network==nil) {
+        static dispatch_once_t dispatch;
+        dispatch_once(&dispatch , ^{ network = [[super allocWithZone:NULL] init];
+        });
+    }
     return network;
 }
 

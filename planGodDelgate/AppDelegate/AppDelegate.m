@@ -40,12 +40,10 @@
     [self prepareScreen:[notification object]];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch
-//    [self applicationDidFinishLaunching:application];
-//    [self didNotCenter];
     [self p_initLocalNotification:application];
     [self applicationDidFinishLaunch];
     [self registerReachability];
+    
     
     return YES;
 }

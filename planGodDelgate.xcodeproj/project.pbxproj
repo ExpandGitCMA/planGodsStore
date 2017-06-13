@@ -76,6 +76,12 @@
 		B3A98E671ECECCF400BBBF7D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B3A98E5F1ECECCF400BBBF7D /* unzip.c */; };
 		B3A98E681ECECCF400BBBF7D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = B3A98E611ECECCF400BBBF7D /* zip.c */; };
 		B3A98E691ECECCF400BBBF7D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A98E641ECECCF400BBBF7D /* SSZipArchive.m */; };
+		B3B3472F1EEFE54400F74FD7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */; };
+		B3B347311EEFE54400F74FD7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */; };
+		B3B347351EEFE54500F74FD7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B347341EEFE54400F74FD7 /* NotificationViewController.m */; };
+		B3B347381EEFE54500F74FD7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B347361EEFE54500F74FD7 /* MainInterface.storyboard */; };
+		B3B3473C1EEFE54500F74FD7 /* AppServerNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B3B347431EEFEBE000F74FD7 /* IPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B347421EEFEBE000F74FD7 /* IPManager.m */; };
 		B3BB0B131D81065800D6466A /* planGodDelgateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BB0B121D81065800D6466A /* planGodDelgateTests.m */; };
 		B3BB0B1E1D81065800D6466A /* planGodDelgateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BB0B1D1D81065800D6466A /* planGodDelgateUITests.m */; };
 		B3BB0B631D810AD800D6466A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BB0B591D810AD800D6466A /* AppDelegate.m */; };
@@ -158,6 +164,13 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
+		B3B3473A1EEFE54500F74FD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB0AED1D81065800D6466A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3B3472C1EEFE54400F74FD7;
+			remoteInfo = AppServerNotification;
+		};
 		B3BB0B0F1D81065800D6466A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB0AED1D81065800D6466A /* Project object */;
@@ -173,6 +186,20 @@
 			remoteInfo = planGodDelgate;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3B347401EEFE54500F74FD7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B3B3473C1EEFE54500F74FD7 /* AppServerNotification.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B301C5AA1EE902410005AB96 /* rsacert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.crt; sourceTree = "<group>"; };
@@ -292,6 +319,15 @@
 		B3A98E621ECECCF400BBBF7D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		B3A98E631ECECCF400BBBF7D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		B3A98E641ECECCF400BBBF7D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppServerNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		B3B347331EEFE54400F74FD7 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		B3B347341EEFE54400F74FD7 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		B3B347371EEFE54500F74FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B3B347391EEFE54500F74FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3B347411EEFEBE000F74FD7 /* IPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPManager.h; sourceTree = "<group>"; };
+		B3B347421EEFEBE000F74FD7 /* IPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPManager.m; sourceTree = "<group>"; };
 		B3B9E1AF1ED2DAF6007AF10A /* IMUserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMUserProtocol.h; sourceTree = "<group>"; };
 		B3BB0AF51D81065800D6466A /* planGodDelgate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = planGodDelgate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BB0B0E1D81065800D6466A /* planGodDelgateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = planGodDelgateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -430,6 +466,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B3B3472A1EEFE54400F74FD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B347311EEFE54400F74FD7 /* UserNotificationsUI.framework in Frameworks */,
+				B3B3472F1EEFE54400F74FD7 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3BB0AF21D81065800D6466A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +507,8 @@
 				B3FF5F8C1EC9980A00EF1176 /* libsqlite3.0.tbd */,
 				B388A6A31EB0A08300059137 /* WebKit.framework */,
 				B388A6A11EB0A07500059137 /* libz.1.tbd */,
+				B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */,
+				B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -555,12 +602,24 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
+		B3B347321EEFE54400F74FD7 /* AppServerNotification */ = {
+			isa = PBXGroup;
+			children = (
+				B3B347331EEFE54400F74FD7 /* NotificationViewController.h */,
+				B3B347341EEFE54400F74FD7 /* NotificationViewController.m */,
+				B3B347361EEFE54500F74FD7 /* MainInterface.storyboard */,
+				B3B347391EEFE54500F74FD7 /* Info.plist */,
+			);
+			path = AppServerNotification;
+			sourceTree = "<group>";
+		};
 		B3BB0AEC1D81065800D6466A = {
 			isa = PBXGroup;
 			children = (
 				B3BB0AF71D81065800D6466A /* planGodDelgate */,
 				B3BB0B111D81065800D6466A /* planGodDelgateTests */,
 				B3BB0B1C1D81065800D6466A /* planGodDelgateUITests */,
+				B3B347321EEFE54400F74FD7 /* AppServerNotification */,
 				B3BB0AF61D81065800D6466A /* Products */,
 				B31E05D01DB864100061E55D /* Frameworks */,
 			);
@@ -572,6 +631,7 @@
 				B3BB0AF51D81065800D6466A /* planGodDelgate.app */,
 				B3BB0B0E1D81065800D6466A /* planGodDelgateTests.xctest */,
 				B3BB0B191D81065800D6466A /* planGodDelgateUITests.xctest */,
+				B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -798,6 +858,8 @@
 		B3BB0B9F1D81460500D6466A /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				B3B347411EEFEBE000F74FD7 /* IPManager.h */,
+				B3B347421EEFEBE000F74FD7 /* IPManager.m */,
 				B3BB0BA01D81460500D6466A /* PlanColorDef.h */,
 				B3BB0BA11D81460500D6466A /* PlanConst.h */,
 				B3C6A19B1DC99BAB00272F51 /* IMColor.h */,
@@ -981,6 +1043,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B3B3472C1EEFE54400F74FD7 /* AppServerNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3B3473F1EEFE54500F74FD7 /* Build configuration list for PBXNativeTarget "AppServerNotification" */;
+			buildPhases = (
+				B3B347291EEFE54400F74FD7 /* Sources */,
+				B3B3472A1EEFE54400F74FD7 /* Frameworks */,
+				B3B3472B1EEFE54400F74FD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppServerNotification;
+			productName = AppServerNotification;
+			productReference = B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B3BB0AF41D81065800D6466A /* planGodDelgate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3BB0B221D81065800D6466A /* Build configuration list for PBXNativeTarget "planGodDelgate" */;
@@ -988,10 +1067,12 @@
 				B3BB0AF11D81065800D6466A /* Sources */,
 				B3BB0AF21D81065800D6466A /* Frameworks */,
 				B3BB0AF31D81065800D6466A /* Resources */,
+				B3B347401EEFE54500F74FD7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3B3473B1EEFE54500F74FD7 /* PBXTargetDependency */,
 			);
 			name = planGodDelgate;
 			productName = planGodDelgate;
@@ -1044,6 +1125,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = DFC;
 				TargetAttributes = {
+					B3B3472C1EEFE54400F74FD7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = JR453H2A98;
+						ProvisioningStyle = Automatic;
+					};
 					B3BB0AF41D81065800D6466A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = JR453H2A98;
@@ -1080,11 +1166,20 @@
 				B3BB0AF41D81065800D6466A /* planGodDelgate */,
 				B3BB0B0D1D81065800D6466A /* planGodDelgateTests */,
 				B3BB0B181D81065800D6466A /* planGodDelgateUITests */,
+				B3B3472C1EEFE54400F74FD7 /* AppServerNotification */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B3B3472B1EEFE54400F74FD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B347381EEFE54500F74FD7 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3BB0AF31D81065800D6466A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1143,6 +1238,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B3B347291EEFE54400F74FD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B347351EEFE54500F74FD7 /* NotificationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3BB0AF11D81065800D6466A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1169,6 +1272,7 @@
 				B3C13FD61D8642E600463689 /* DFCStatusUtility.m in Sources */,
 				B3D4DBE91D82BDFA003EF7D9 /* DFCHotSearch.m in Sources */,
 				B3CFCE871D9121EC0096A25D /* AFURLSessionManager.m in Sources */,
+				B3B347431EEFEBE000F74FD7 /* IPManager.m in Sources */,
 				B3FF5F961EC99A4900EF1176 /* SQLDatabase.m in Sources */,
 				B3CFCE821D9121EC0096A25D /* AFHTTPSessionManager.m in Sources */,
 				B3FB03A71DB7922C0071D05F /* DFCWelcomeVC.m in Sources */,
@@ -1268,6 +1372,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B3B3473B1EEFE54500F74FD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3B3472C1EEFE54400F74FD7 /* AppServerNotification */;
+			targetProxy = B3B3473A1EEFE54500F74FD7 /* PBXContainerItemProxy */;
+		};
 		B3BB0B101D81065800D6466A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3BB0AF41D81065800D6466A /* planGodDelgate */;
@@ -1281,6 +1390,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B3B347361EEFE54500F74FD7 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3B347371EEFE54500F74FD7 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		B3BB0B601D810AD800D6466A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1292,6 +1409,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B3B3473D1EEFE54500F74FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JR453H2A98;
+				INFOPLIST_FILE = AppServerNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.delgate.planGodDelgate.AppServerNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B3B3473E1EEFE54500F74FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JR453H2A98;
+				INFOPLIST_FILE = AppServerNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.delgate.planGodDelgate.AppServerNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		B3BB0B201D81065800D6466A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1488,6 +1644,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B3B3473F1EEFE54500F74FD7 /* Build configuration list for PBXNativeTarget "AppServerNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3B3473D1EEFE54500F74FD7 /* Debug */,
+				B3B3473E1EEFE54500F74FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B3BB0AF01D81065800D6466A /* Build configuration list for PBXProject "planGodDelgate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

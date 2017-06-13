@@ -185,6 +185,9 @@ static const NSInteger page = 1;//标签数量
         case 9:{
             //[self toAdd];
             [self showActionSheet];
+            //UIApplicationDidReceiveMemoryWarningNotification
+            [[NSNotificationCenter defaultCenter] postNotificationName:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+            
         }break;
         default:
             break;
@@ -257,15 +260,15 @@ static const NSInteger page = 1;//标签数量
 -(void)loadView:(GoodlistView *)loadView message:(NSString *)message{
     DEBUG_NSLog(@"message=%@",message);
     [self setShopCarCount:message];
-//     [DFCLocalNotificationCenter sendLocalNotification:@"加入购物车成功" subTitle:nil body:@"加入购物车"];
-    [[DFCShowMessage sharedView]showMessage:@"加入购物车成功" duration:2.0f];
+     [DFCLocalNotificationCenter sendLocalNotification:@"加入购物车成功" subTitle:nil body:@"加入购物车"];
+//    [[DFCShowMessage sharedView]showMessage:@"加入购物车成功" duration:2.0f];
 }
 
 
 -(void)btnFileFn:(UISegmentedControl *)sender{
     NSInteger index = sender.selectedSegmentIndex;
     [UIView animateWithDuration:0.75 delay:0 usingSpringWithDamping:0.95 initialSpringVelocity:0 options:0 animations:^{
-       [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, 0) animated:nil];
+       [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, 0) animated:(BOOL)nil];
     } completion:^(BOOL finished) {
         DEBUG_NSLog(@"当前选中分段是%ld",(long)index);
     }];
