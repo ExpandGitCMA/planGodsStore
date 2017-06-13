@@ -91,7 +91,8 @@
             self.netStatus = mNetworkStatus;
         }
         _networkStatus = status;
-        DEBUG_NSLog(@"当前网络状态 = %@",self.netStatus);
+        [self viewOptLoading];
+         DEBUG_NSLog(@"当前网络状态 = %@",self.netStatus);
     }];
     
 }

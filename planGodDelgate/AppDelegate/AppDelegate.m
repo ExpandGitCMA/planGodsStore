@@ -14,6 +14,7 @@
 #import "NSUserDefaultsManager.h"
 #import "DFCLaunchView.h"
 #import <UserNotifications/UserNotifications.h>
+#import "LauncScreen.h"
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
