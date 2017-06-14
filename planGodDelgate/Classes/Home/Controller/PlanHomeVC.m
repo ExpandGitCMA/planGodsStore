@@ -54,8 +54,6 @@
 static const NSInteger page = 1;//标签数量
 @implementation PlanHomeVC
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -73,10 +71,8 @@ static const NSInteger page = 1;//标签数量
     [self dictSource];
 
     [self.fileArchiveZip initWithPath];
-    
-    
-}
 
+}
 
 -(NSArray*)dictSource{
     if (!_dictSource) {
@@ -403,6 +399,7 @@ static const NSInteger page = 1;//标签数量
 }
 
 -(void)pushLaunch:(NSNotification*)not{
+    
 }
 
 -(void)dealloc{
