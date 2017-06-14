@@ -77,7 +77,7 @@ static const NSInteger page = 1;//标签数量
 -(NSArray*)dictSource{
     if (!_dictSource) {
         _dictSource = [GoodKFCModel parseWithDict:NULL];
-        //DEBUG_NSLog(@"dictSource==%@",_dictSource);
+        DEBUG_NSLog(@"dictSource==%@",_dictSource);
     }
     return _dictSource;
 }
