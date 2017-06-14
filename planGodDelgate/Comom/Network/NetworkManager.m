@@ -62,7 +62,7 @@
 }
 
 - (void)networkReaching{
-
+    
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         NSString *mNetworkStatus = [NSString string];
@@ -91,8 +91,8 @@
             self.netStatus = mNetworkStatus;
         }
         _networkStatus = status;
-        [self viewOptLoading];
-         DEBUG_NSLog(@"当前网络状态 = %@",self.netStatus);
+       
+        DEBUG_NSLog(@"当前网络状态 = %@",self.netStatus);
     }];
     
 }
@@ -127,12 +127,13 @@
         if (responseObject) {
             success(dic);
         }
-        
+          [_viewOptLoading stopLoading];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error:%@", error.description);
         if (failed) {
             failed(error);
         }
+          [_viewOptLoading stopLoading];
     }];
 
 

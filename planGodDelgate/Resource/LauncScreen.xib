@@ -18,18 +18,28 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_back_ramd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-46-D6l">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_Account_Jollychic_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="mJs-87-nVZ">
+                    <rect key="frame" x="147" y="293" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="7jj-iU-pfK"/>
+                        <constraint firstAttribute="height" constant="80" id="YnO-TR-XlW"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="e1x-46-D6l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Sc-vx-Rzc"/>
+                <constraint firstItem="mJs-87-nVZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ezb-kk-Ahi"/>
                 <constraint firstItem="e1x-46-D6l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i09-N5-Ba6"/>
                 <constraint firstAttribute="trailing" secondItem="e1x-46-D6l" secondAttribute="trailing" id="ktj-o1-3mg"/>
+                <constraint firstItem="mJs-87-nVZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yOX-Yv-pJy"/>
                 <constraint firstAttribute="bottom" secondItem="e1x-46-D6l" secondAttribute="bottom" id="z25-v1-ml2"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
     <resources>
+        <image name="img_Account_Jollychic_Logo.png" width="120" height="120"/>
         <image name="launch_back_ramd.jpg" width="750" height="1334"/>
     </resources>
 </document>
