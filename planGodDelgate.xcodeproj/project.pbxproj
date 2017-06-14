@@ -60,6 +60,7 @@
 		B37691F61D87F6C700801DC6 /* DFCPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37691F51D87F6C700801DC6 /* DFCPayment.xib */; };
 		B376FA321DB9AA870066E995 /* DFCGodLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B376FA311DB9AA870066E995 /* DFCGodLaunchVC.m */; };
 		B380E1921DCB275200D8DD77 /* NSString+IMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B380E1911DCB275200D8DD77 /* NSString+IMAdditions.m */; };
+		B381F1071EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B381F1061EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png */; };
 		B388A66C1EB06A0600059137 /* GoodBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B388A66A1EB06A0600059137 /* GoodBannerCell.m */; };
 		B388A66D1EB06A0600059137 /* GoodBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B388A66B1EB06A0600059137 /* GoodBannerCell.xib */; };
 		B388A6711EB06A6C00059137 /* GoodFlashsaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B388A66F1EB06A6C00059137 /* GoodFlashsaleCell.m */; };
@@ -298,6 +299,7 @@
 		B376FA311DB9AA870066E995 /* DFCGodLaunchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCGodLaunchVC.m; sourceTree = "<group>"; };
 		B380E1901DCB275200D8DD77 /* NSString+IMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IMAdditions.h"; sourceTree = "<group>"; };
 		B380E1911DCB275200D8DD77 /* NSString+IMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IMAdditions.m"; sourceTree = "<group>"; };
+		B381F1061EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_Account_Jollychic_Logo.png; sourceTree = "<group>"; };
 		B388A6691EB06A0600059137 /* GoodBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodBannerCell.h; sourceTree = "<group>"; };
 		B388A66A1EB06A0600059137 /* GoodBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodBannerCell.m; sourceTree = "<group>"; };
 		B388A66B1EB06A0600059137 /* GoodBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodBannerCell.xib; sourceTree = "<group>"; };
@@ -719,6 +721,7 @@
 				B3B347471EEFFB0C00F74FD7 /* LauncScreen.m */,
 				B3B3474D1EEFFBDE00F74FD7 /* Main.storyboard */,
 				B3B347491EEFFB1B00F74FD7 /* LauncScreen.xib */,
+				B381F1061EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png */,
 				B34ACF521EADD391002783C1 /* Resource.bundle */,
 			);
 			path = Resource;
@@ -1246,6 +1249,7 @@
 				B3C13FEF1D86A5DF00463689 /* ShopCarCount.xib in Resources */,
 				B3D4DBEE1D82BE21003EF7D9 /* HistoryViewCell.xib in Resources */,
 				B373B66F1E97537000DEE23D /* img_network_reload1_160x160@2x.png in Resources */,
+				B381F1071EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png in Resources */,
 				B3B347591EF00DCC00F74FD7 /* launch_text_ar@2x.png in Resources */,
 				B34ACF531EADD391002783C1 /* Resource.bundle in Resources */,
 				B37691F11D87F21B00801DC6 /* DFCOrderCell.xib in Resources */,
