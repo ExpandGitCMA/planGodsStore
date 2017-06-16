@@ -7,37 +7,7 @@
 //
 
 #import "PlanHomeVC.h"
-#import "PlanSearchVC.h"
-#import "PlanColorDef.h"
-#import "NetworkManager.h"
-#import "GoodModel.h"
-#import "GoodlistView.h"
-#import "PlanAccountView.h"
-#import "DAOManager.h"
-#import "DFCStatusUtility.h"
-#import "ShopCarCount.h"
-#import "DFCShopCarVC.h"
-#import "DFCShowMessage.h"
-#import "DFCGodLaunchVC.h"
-#import "DFCHotContent.h"
-#import "NSUserDefaultsManager.h"
-#import "DFCLocalNotificationCenter.h"
-#import <MediaPlayer/MediaPlayer.h>
-#import "DFCMyDataSource.h"
-#import "HomeDataSourceViewModel.h"
-#import "NetworkLoading.h"
-#import "NetworkStatusVC.h"
-#import "GoodKFCModel.h"
-#import "HistoryArchive.h"
-#import "FileArchiveZip.h"
-#import <objc/message.h>
-#import "Person.h"
-#import "NSViewCopy.h"
-#import "NSDateComponentsObject.h"
-#import "JSONKit.h"
-#import "SQLDatabase.h"
-#import "UserModel.h"
-#import "User.h"
+#import "PlanGodsHeaderFile.pch"
 @interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate>
 @property(nonatomic,retain)HomeDataSourceViewModel *dataSourceViewModel;
 @property(nonatomic,strong)UIScrollView *scrollView;

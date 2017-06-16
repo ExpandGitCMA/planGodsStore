@@ -363,6 +363,7 @@
 		B3A98E621ECECCF400BBBF7D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		B3A98E631ECECCF400BBBF7D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		B3A98E641ECECCF400BBBF7D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		B3B02DF01EF387380074B414 /* PlanGodsHeaderFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanGodsHeaderFile.pch; sourceTree = "<group>"; };
 		B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppServerNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -587,6 +588,7 @@
 				B32409631EE515A000269F00 /* DownloadTask.h */,
 				B32409641EE515A000269F00 /* DownloadTask.m */,
 				B30FAFBC1EE64A4600D64F8D /* Download.h */,
+				B3B02DF01EF387380074B414 /* PlanGodsHeaderFile.pch */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

@@ -92,7 +92,7 @@ static NSUInteger  const SGMaxSections = 100;
 }
 
 -(void)addTimer{
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.5f target:self selector:@selector(nextpages) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.5f target:self selector:@selector(nextpages) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     self.timer = timer ;
 }
