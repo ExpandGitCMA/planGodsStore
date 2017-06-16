@@ -8,6 +8,8 @@
 
 #import "PlanHomeVC.h"
 #import "PlanGodsHeaderFile.pch"
+#import "PersonRunTime.h"
+#import "NSObject+Property.h"
 @interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate>
 @property(nonatomic,retain)HomeDataSourceViewModel *dataSourceViewModel;
 @property(nonatomic,strong)UIScrollView *scrollView;
@@ -27,20 +29,25 @@ static const NSInteger page = 1;//标签数量
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
-  
-   [self refreshDataSource:page];
-   [self initNavigationView];
-    [self count];
-    if ([self isExist]==YES) {
-         [self.dataSourceViewModel downloadBannerUrl];
-    }
-    [[DAOManager sharedInstanceDataDAO]arrayManager];
-    [[DAOManager sharedInstanceDataDAO]searcManager];
-    [[DAOManager sharedInstanceDataDAO]shopCarManager];
-    [self dictSource];
 
-    [self.fileArchiveZip initWithPath];
+    NSObject *objc = [[NSObject alloc] init];
+    objc.name = @"周立贺";
+    NSLog(@"%@",objc.name);
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
+//  
+//   [self refreshDataSource:page];
+//   [self initNavigationView];
+//    [self count];
+//    if ([self isExist]==YES) {
+//         [self.dataSourceViewModel downloadBannerUrl];
+//    }
+//    [[DAOManager sharedInstanceDataDAO]arrayManager];
+//    [[DAOManager sharedInstanceDataDAO]searcManager];
+//    [[DAOManager sharedInstanceDataDAO]shopCarManager];
+    //[self dictSource];
+
+    //[self.fileArchiveZip initWithPath];
 
 }
 
