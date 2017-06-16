@@ -22,6 +22,7 @@
 @property(nonatomic,strong)HistoryArchive *historyArchive;
 @property(nonatomic,strong)FileArchiveZip *fileArchiveZip;
 @property(nonatomic,copy)NSViewCopy *viewCopy;
+
 @end
 static const NSInteger page = 1;//标签数量
 @implementation PlanHomeVC

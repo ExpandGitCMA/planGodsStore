@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
+
 typedef void(^GoodGesBlock)(NSInteger  goodGes);
 
 @interface GoodFlashsaleCell : UITableViewCell

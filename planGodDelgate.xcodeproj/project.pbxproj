@@ -92,6 +92,7 @@
 		B3B02DF61EF38D180074B414 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DF51EF38D180074B414 /* UIImage+Image.m */; };
 		B3B02DF91EF38EAE0074B414 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DF81EF38EAE0074B414 /* NSObject+Property.m */; };
 		B3B02DFC1EF39FC80074B414 /* RuntimeKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DFB1EF39FC80074B414 /* RuntimeKit.m */; };
+		B3B02DFF1EF3B31E0074B414 /* UserView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DFE1EF3B31E0074B414 /* UserView.m */; };
 		B3B3472F1EEFE54400F74FD7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */; };
 		B3B347311EEFE54400F74FD7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */; };
 		B3B347351EEFE54500F74FD7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B347341EEFE54400F74FD7 /* NotificationViewController.m */; };
@@ -376,6 +377,8 @@
 		B3B02DF81EF38EAE0074B414 /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		B3B02DFA1EF39FC80074B414 /* RuntimeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeKit.h; sourceTree = "<group>"; };
 		B3B02DFB1EF39FC80074B414 /* RuntimeKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeKit.m; sourceTree = "<group>"; };
+		B3B02DFD1EF3B31E0074B414 /* UserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserView.h; sourceTree = "<group>"; };
+		B3B02DFE1EF3B31E0074B414 /* UserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserView.m; sourceTree = "<group>"; };
 		B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppServerNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -1066,6 +1069,8 @@
 				B388A66E1EB06A6C00059137 /* GoodFlashsaleCell.h */,
 				B388A66F1EB06A6C00059137 /* GoodFlashsaleCell.m */,
 				B388A6701EB06A6C00059137 /* GoodFlashsaleCell.xib */,
+				B3B02DFD1EF3B31E0074B414 /* UserView.h */,
+				B3B02DFE1EF3B31E0074B414 /* UserView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1379,6 +1384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A98E651ECECCF400BBBF7D /* ioapi.c in Sources */,
+				B3B02DFF1EF3B31E0074B414 /* UserView.m in Sources */,
 				B33F12FD1EB34B2C00AFF8A2 /* Person.m in Sources */,
 				B3C13FED1D86A57B00463689 /* ShopCarCount.m in Sources */,
 				B30FAFC11EE6770E00D64F8D /* NSDateComponentsObject.m in Sources */,

@@ -10,9 +10,12 @@
 #import "NSString+IMAdditions.h"
 
 @interface GoodModel : NSObject
+@property(nonatomic,copy)NSString*name;
 @property(nonatomic,copy)NSString*userCodel;
 @property(nonatomic,copy)NSString*imageUrl;
 @property(nonatomic,copy)NSString*goodsNname;
 @property(nonatomic,copy)NSString*price;
 +(NSMutableArray<GoodModel *>*)parseWithJson:(NSArray *)list;
 @end
+
+

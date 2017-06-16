@@ -27,6 +27,8 @@
         model.userCodel = [[model.price dataUsingEncoding:NSUTF8StringEncoding]md5Hash];
         [arrayList addObject: model];
         [[DAOManager sharedInstanceDataDAO]saveArrayManager:model];
+        
+      
     }
         [[DAOManager sharedInstanceDataDAO]saveArrayManager:model];
     return arrayList;

@@ -121,6 +121,18 @@
 
 @implementation User
 
+
++(NSArray<NSObject *>*)parseWithJson:(NSArray *)list{
+    NSMutableArray *arraySource = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in list) {
+        NSObject*model = [[NSObject alloc]init];
+        [model setValuesForKeysWithDictionary:dic];
+        [arraySource addObject:model];
+    }
+    return [arraySource copy];
+}
+
+
 //JSON -> User
 +(User*)jsonWithKeyValuesModel{
     NSDictionary *dict = @{

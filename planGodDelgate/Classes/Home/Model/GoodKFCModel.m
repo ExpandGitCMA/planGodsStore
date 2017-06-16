@@ -10,6 +10,8 @@
 #import "MJExtension.h"
 @implementation GoodKFCModel
 
+
+
 +(instancetype)parseWithJson:(NSDictionary *)dict{
 
     GoodKFCModel *good = [[GoodKFCModel alloc]init];

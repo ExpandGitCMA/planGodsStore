@@ -22,6 +22,7 @@ typedef enum {
 @property (assign, nonatomic) Sex sex;
 @property (assign, nonatomic, getter=isGay) BOOL gay;
 +(User*)jsonWithKeyValuesModel;
++(NSArray<NSObject *>*)parseWithJson:(NSArray *)list;
 @end
 
 
