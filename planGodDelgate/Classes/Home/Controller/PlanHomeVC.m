@@ -29,25 +29,25 @@ static const NSInteger page = 1;//标签数量
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    NSObject *objc = [[NSObject alloc] init];
-    objc.name = @"周立贺";
-    NSLog(@"%@",objc.name);
+//
+//    NSObject *objc = [[NSObject alloc] init];
+//    objc.name = @"周立贺";
+//    NSLog(@"%@",objc.name);
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
-//  
-//   [self refreshDataSource:page];
-//   [self initNavigationView];
-//    [self count];
-//    if ([self isExist]==YES) {
-//         [self.dataSourceViewModel downloadBannerUrl];
-//    }
-//    [[DAOManager sharedInstanceDataDAO]arrayManager];
-//    [[DAOManager sharedInstanceDataDAO]searcManager];
-//    [[DAOManager sharedInstanceDataDAO]shopCarManager];
-    //[self dictSource];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
+  
+   [self refreshDataSource:page];
+   [self initNavigationView];
+    [self count];
+    if ([self isExist]==YES) {
+         [self.dataSourceViewModel downloadBannerUrl];
+    }
+    [[DAOManager sharedInstanceDataDAO]arrayManager];
+    [[DAOManager sharedInstanceDataDAO]searcManager];
+    [[DAOManager sharedInstanceDataDAO]shopCarManager];
+    [self dictSource];
 
-    //[self.fileArchiveZip initWithPath];
+//    [self.fileArchiveZip initWithPath];
 
 }
 
