@@ -7,37 +7,9 @@
 //
 
 #import "PlanHomeVC.h"
-#import "PlanSearchVC.h"
-#import "PlanColorDef.h"
-#import "NetworkManager.h"
-#import "GoodModel.h"
-#import "GoodlistView.h"
-#import "PlanAccountView.h"
-#import "DAOManager.h"
-#import "DFCStatusUtility.h"
-#import "ShopCarCount.h"
-#import "DFCShopCarVC.h"
-#import "DFCShowMessage.h"
-#import "DFCGodLaunchVC.h"
-#import "DFCHotContent.h"
-#import "NSUserDefaultsManager.h"
-#import "DFCLocalNotificationCenter.h"
-#import <MediaPlayer/MediaPlayer.h>
-#import "DFCMyDataSource.h"
-#import "HomeDataSourceViewModel.h"
-#import "NetworkLoading.h"
-#import "NetworkStatusVC.h"
-#import "GoodKFCModel.h"
-#import "HistoryArchive.h"
-#import "FileArchiveZip.h"
-#import <objc/message.h>
-#import "Person.h"
-#import "NSViewCopy.h"
-#import "NSDateComponentsObject.h"
-#import "JSONKit.h"
-#import "SQLDatabase.h"
-#import "UserModel.h"
-#import "User.h"
+#import "PlanGodsHeaderFile.pch"
+#import "PersonRunTime.h"
+#import "NSObject+Property.h"
 @interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate>
 @property(nonatomic,retain)HomeDataSourceViewModel *dataSourceViewModel;
 @property(nonatomic,strong)UIScrollView *scrollView;
@@ -50,12 +22,18 @@
 @property(nonatomic,strong)HistoryArchive *historyArchive;
 @property(nonatomic,strong)FileArchiveZip *fileArchiveZip;
 @property(nonatomic,copy)NSViewCopy *viewCopy;
+
 @end
 static const NSInteger page = 1;//标签数量
 @implementation PlanHomeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//
+//    NSObject *objc = [[NSObject alloc] init];
+//    objc.name = @"周立贺";
+//    NSLog(@"%@",objc.name);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
   
@@ -70,14 +48,14 @@ static const NSInteger page = 1;//标签数量
     [[DAOManager sharedInstanceDataDAO]shopCarManager];
     [self dictSource];
 
-    [self.fileArchiveZip initWithPath];
+//    [self.fileArchiveZip initWithPath];
 
 }
 
 -(NSArray*)dictSource{
     if (!_dictSource) {
         _dictSource = [GoodKFCModel parseWithDict:NULL];
-        //DEBUG_NSLog(@"dictSource==%@",_dictSource);
+        DEBUG_NSLog(@"dictSource==%@",_dictSource);
     }
     return _dictSource;
 }

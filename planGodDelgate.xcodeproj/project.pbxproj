@@ -88,6 +88,11 @@
 		B3A98E671ECECCF400BBBF7D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B3A98E5F1ECECCF400BBBF7D /* unzip.c */; };
 		B3A98E681ECECCF400BBBF7D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = B3A98E611ECECCF400BBBF7D /* zip.c */; };
 		B3A98E691ECECCF400BBBF7D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A98E641ECECCF400BBBF7D /* SSZipArchive.m */; };
+		B3B02DF31EF389BD0074B414 /* PersonRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DF21EF389BD0074B414 /* PersonRunTime.m */; };
+		B3B02DF61EF38D180074B414 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DF51EF38D180074B414 /* UIImage+Image.m */; };
+		B3B02DF91EF38EAE0074B414 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DF81EF38EAE0074B414 /* NSObject+Property.m */; };
+		B3B02DFC1EF39FC80074B414 /* RuntimeKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DFB1EF39FC80074B414 /* RuntimeKit.m */; };
+		B3B02DFF1EF3B31E0074B414 /* UserView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B02DFE1EF3B31E0074B414 /* UserView.m */; };
 		B3B3472F1EEFE54400F74FD7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */; };
 		B3B347311EEFE54400F74FD7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */; };
 		B3B347351EEFE54500F74FD7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B347341EEFE54400F74FD7 /* NotificationViewController.m */; };
@@ -363,6 +368,17 @@
 		B3A98E621ECECCF400BBBF7D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		B3A98E631ECECCF400BBBF7D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		B3A98E641ECECCF400BBBF7D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		B3B02DF01EF387380074B414 /* PlanGodsHeaderFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanGodsHeaderFile.pch; sourceTree = "<group>"; };
+		B3B02DF11EF389BD0074B414 /* PersonRunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonRunTime.h; path = ../Home/ViewModel/PersonRunTime.h; sourceTree = "<group>"; };
+		B3B02DF21EF389BD0074B414 /* PersonRunTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonRunTime.m; path = ../Home/ViewModel/PersonRunTime.m; sourceTree = "<group>"; };
+		B3B02DF41EF38D180074B414 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Image.h"; path = "../Home/ViewModel/UIImage+Image.h"; sourceTree = "<group>"; };
+		B3B02DF51EF38D180074B414 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Image.m"; path = "../Home/ViewModel/UIImage+Image.m"; sourceTree = "<group>"; };
+		B3B02DF71EF38EAE0074B414 /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
+		B3B02DF81EF38EAE0074B414 /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
+		B3B02DFA1EF39FC80074B414 /* RuntimeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeKit.h; sourceTree = "<group>"; };
+		B3B02DFB1EF39FC80074B414 /* RuntimeKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeKit.m; sourceTree = "<group>"; };
+		B3B02DFD1EF3B31E0074B414 /* UserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserView.h; sourceTree = "<group>"; };
+		B3B02DFE1EF3B31E0074B414 /* UserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserView.m; sourceTree = "<group>"; };
 		B3B3472D1EEFE54400F74FD7 /* AppServerNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppServerNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B3472E1EEFE54400F74FD7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B3B347301EEFE54400F74FD7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -571,8 +587,16 @@
 		B33F12F51EB3429900AFF8A2 /* Runtime_Objct */ = {
 			isa = PBXGroup;
 			children = (
+				B3B02DFA1EF39FC80074B414 /* RuntimeKit.h */,
+				B3B02DFB1EF39FC80074B414 /* RuntimeKit.m */,
 				B33F12FB1EB34B2C00AFF8A2 /* Person.h */,
 				B33F12FC1EB34B2C00AFF8A2 /* Person.m */,
+				B3B02DF11EF389BD0074B414 /* PersonRunTime.h */,
+				B3B02DF21EF389BD0074B414 /* PersonRunTime.m */,
+				B3B02DF41EF38D180074B414 /* UIImage+Image.h */,
+				B3B02DF51EF38D180074B414 /* UIImage+Image.m */,
+				B3B02DF71EF38EAE0074B414 /* NSObject+Property.h */,
+				B3B02DF81EF38EAE0074B414 /* NSObject+Property.m */,
 			);
 			path = Runtime_Objct;
 			sourceTree = "<group>";
@@ -587,6 +611,7 @@
 				B32409631EE515A000269F00 /* DownloadTask.h */,
 				B32409641EE515A000269F00 /* DownloadTask.m */,
 				B30FAFBC1EE64A4600D64F8D /* Download.h */,
+				B3B02DF01EF387380074B414 /* PlanGodsHeaderFile.pch */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1044,6 +1069,8 @@
 				B388A66E1EB06A6C00059137 /* GoodFlashsaleCell.h */,
 				B388A66F1EB06A6C00059137 /* GoodFlashsaleCell.m */,
 				B388A6701EB06A6C00059137 /* GoodFlashsaleCell.xib */,
+				B3B02DFD1EF3B31E0074B414 /* UserView.h */,
+				B3B02DFE1EF3B31E0074B414 /* UserView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1357,6 +1384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A98E651ECECCF400BBBF7D /* ioapi.c in Sources */,
+				B3B02DFF1EF3B31E0074B414 /* UserView.m in Sources */,
 				B33F12FD1EB34B2C00AFF8A2 /* Person.m in Sources */,
 				B3C13FED1D86A57B00463689 /* ShopCarCount.m in Sources */,
 				B30FAFC11EE6770E00D64F8D /* NSDateComponentsObject.m in Sources */,
@@ -1387,6 +1415,7 @@
 				B381F1251EF1330200D9EB4B /* NSObject+MJClass.m in Sources */,
 				B3BB0B651D810AD800D6466A /* main.m in Sources */,
 				B3A3F5BF1ECAD98E009BC5F6 /* UserModel.m in Sources */,
+				B3B02DFC1EF39FC80074B414 /* RuntimeKit.m in Sources */,
 				B37691F01D87F21B00801DC6 /* DFCOrderCell.m in Sources */,
 				B34CA8741EEAA316005F60D1 /* UIButton+ActionButton.m in Sources */,
 				B3C4A3AC1E31A8A300167084 /* DFCMyDataSource.m in Sources */,
@@ -1414,6 +1443,7 @@
 				B3B347481EEFFB0C00F74FD7 /* LauncScreen.m in Sources */,
 				B3C6A19D1DC99BAB00272F51 /* IMColor.m in Sources */,
 				B381F1281EF1330200D9EB4B /* NSObject+MJProperty.m in Sources */,
+				B3B02DF91EF38EAE0074B414 /* NSObject+Property.m in Sources */,
 				B34CA8831EEAAB7B005F60D1 /* UITabBarController+Extend.m in Sources */,
 				B3C13FD91D8648BD00463689 /* DFCSCANCode.m in Sources */,
 				B34CA8771EEAA5F2005F60D1 /* UIColor+RandomColor.m in Sources */,
@@ -1425,6 +1455,7 @@
 				B3FF5F811EC9942700EF1176 /* FMDatabasePool.m in Sources */,
 				B380E1921DCB275200D8DD77 /* NSString+IMAdditions.m in Sources */,
 				B3A98E691ECECCF400BBBF7D /* SSZipArchive.m in Sources */,
+				B3B02DF61EF38D180074B414 /* UIImage+Image.m in Sources */,
 				B3CD35CC1EEE6FE300D17FFF /* NSCopyModel.m in Sources */,
 				B381F1241EF1330200D9EB4B /* MJPropertyType.m in Sources */,
 				B365C5A01DC88F3500855687 /* CalculateFileSize.m in Sources */,
@@ -1449,6 +1480,7 @@
 				B3C6A1A01DC9CE3800272F51 /* BannerCollection.m in Sources */,
 				B34CA87D1EEAA7CF005F60D1 /* UIView+UIView_Utils.m in Sources */,
 				B31E05E81DB872D30061E55D /* DFCLaunchView.m in Sources */,
+				B3B02DF31EF389BD0074B414 /* PersonRunTime.m in Sources */,
 				B3A98E661ECECCF400BBBF7D /* mztools.c in Sources */,
 				B3C6A1A71DC9D5C000272F51 /* BannerCell.m in Sources */,
 				B388A68E1EB09DC500059137 /* FileArchiveZip.m in Sources */,

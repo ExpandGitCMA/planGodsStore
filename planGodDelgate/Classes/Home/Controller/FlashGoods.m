@@ -63,6 +63,8 @@
     [self setButTop];
 }
 
+
+
 -(void)flashsale{
     _imgFlashsale= [UIImage imageNamed:[NSString stringWithFormat:@"%ld_Gods_pocket",(unsigned long)_count]];
     _flashsaleImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, _imgFlashsale.size.height/2)];

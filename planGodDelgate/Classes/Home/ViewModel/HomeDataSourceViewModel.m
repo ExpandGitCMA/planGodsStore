@@ -17,9 +17,20 @@
     NSURLSessionDownloadTask *_downloadTask ;
      NSURLSession *_backgroundSession;
 }
+@property(nonatomic,strong)NSMutableArray*arraySource;
 @end
 
 @implementation HomeDataSourceViewModel
+
++(NSArray<NSObject *>*)parseWithJson:(NSArray *)list{
+    NSMutableArray *arraySource = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in list) {
+             NSObject*model = [[NSObject alloc]init];
+             [model setValuesForKeysWithDictionary:dic];
+             [arraySource addObject:model];
+    }
+    return [arraySource copy];
+}
 
 -(void)downloadBannerUrl{
     [self getFilePathWith];
