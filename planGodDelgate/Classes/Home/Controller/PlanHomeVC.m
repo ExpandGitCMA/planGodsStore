@@ -10,6 +10,8 @@
 #import "PlanGodsHeaderFile.pch"
 #import "PersonRunTime.h"
 #import "NSObject+Property.h"
+#import "GeneralModel.h"
+#import "ZYDirTool.h"
 @interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate>
 @property(nonatomic,retain)HomeDataSourceViewModel *dataSourceViewModel;
 @property(nonatomic,strong)UIScrollView *scrollView;
@@ -29,14 +31,8 @@ static const NSInteger page = 1;//标签数量
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//
-//    NSObject *objc = [[NSObject alloc] init];
-//    objc.name = @"周立贺";
-//    NSLog(@"%@",objc.name);
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
-  
    [self refreshDataSource:page];
    [self initNavigationView];
     [self count];
@@ -49,7 +45,7 @@ static const NSInteger page = 1;//标签数量
     [self dictSource];
 
 //    [self.fileArchiveZip initWithPath];
-
+    
 }
 
 -(NSArray*)dictSource{

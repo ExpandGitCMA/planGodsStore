@@ -168,7 +168,8 @@ static NSUInteger  const SGMaxSections = 100;
 /// 默认选中的组
 - (void)defaultSelectedScetion {
     if (self.arraySource.count == 0) return;
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:SGMaxSections / 2] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:SGMaxSections / 2] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+    
 }
 
 //解决当父View释放时，当前视图因为被Timer强引用而不能释放的问题

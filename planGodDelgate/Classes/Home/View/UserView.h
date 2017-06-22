@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger ,SubkeyType) {
+    SubkeyNome
+};
 
 typedef void(^HttpSucceedBlock)( BOOL ret, id obj  );
 
@@ -19,6 +22,7 @@ typedef void(^SucceedBlock)(id obj );
 
 //com.dafenci.planByGodWin.text
 @interface UserView : UIView
+@property(nonatomic,assign)SubkeyType Key;
 -(void)requestHttp:(HttpSucceedBlock)completedBlock;
 @property (nonatomic,copy) SucceedBlock block;
 @end

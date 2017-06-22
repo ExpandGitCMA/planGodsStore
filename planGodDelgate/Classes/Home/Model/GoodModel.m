@@ -12,6 +12,10 @@
 
 @implementation GoodModel
 
+-(id)itemWithName:(NSString *)name{
+    return name;
+}
+
 +(NSMutableArray<GoodModel *>*)parseWithJson:(NSArray *)list{
     NSMutableArray *arrayList = [[NSMutableArray alloc] init];
           GoodModel *model = [[GoodModel alloc]init];
