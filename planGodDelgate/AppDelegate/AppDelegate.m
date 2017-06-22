@@ -51,13 +51,10 @@
 
 -(void)didFinishLaunch{
     NSString *filePath = [[NSUserDefaultsManager shareManager]getfilePath];
-    BOOL isExist = [[NSUserDefaultsManager shareManager]isFileExistWithFilePath:filePath];
-    if (isExist) {// 图片存在
-        DFCLaunchView *advertiseView = [[DFCLaunchView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        advertiseView.filePath = filePath;
-        advertiseView.backgroundColor = [UIColor whiteColor];
-        [advertiseView show];
-    }
+    DFCLaunchView *advertiseView = [[DFCLaunchView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    advertiseView.filePath = filePath;
+    advertiseView.backgroundColor = [UIColor whiteColor];
+    [advertiseView show];
     [[NSUserDefaultsManager shareManager]getAdvertisingImage];
 }
 

@@ -38,7 +38,7 @@ static int const showtime = 4;
         _adView.userInteractionEnabled = YES;
         _adView.contentMode = UIViewContentModeScaleAspectFill;
         _adView.clipsToBounds = YES;
-        _adView.backgroundColor = [UIColor whiteColor];
+        //_adView.backgroundColor = [UIColor whiteColor];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToAd)];
         [_adView addGestureRecognizer:tap];
         
@@ -65,10 +65,10 @@ static int const showtime = 4;
 
 - (void)setFilePath:(NSString *)filePath{
     _filePath = filePath;
-    if ([filePath isNull]==NO) {
-        _adView.image = [UIImage imageWithContentsOfFile:filePath];
+    if ([filePath isNull]) {
+         _adView.image = [UIImage imageNamed:@"/Users/chenmeian/Documents/planGods_works/planGodsStore/planGodDelgate/Resource/购物车/advert.jpeg"];
     }else{
-        _adView.image = [UIImage imageNamed:@"advert.jpeg"];
+        _adView.image = [UIImage imageWithContentsOfFile:filePath];
     }
 }
 

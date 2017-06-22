@@ -29,9 +29,13 @@
 static const NSInteger page = 1;//标签数量
 @implementation PlanHomeVC
 
+#define URL_HomeGoodsList @"http://app.jollychic.com:80？nativeEdtion/getEdtionJson.do"  //首页推荐商品列表
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
    [self refreshDataSource:page];
    [self initNavigationView];
@@ -44,8 +48,7 @@ static const NSInteger page = 1;//标签数量
     [[DAOManager sharedInstanceDataDAO]shopCarManager];
     [self dictSource];
 
-//    [self.fileArchiveZip initWithPath];
-    
+    [self.fileArchiveZip initWithPath];
 }
 
 -(NSArray*)dictSource{

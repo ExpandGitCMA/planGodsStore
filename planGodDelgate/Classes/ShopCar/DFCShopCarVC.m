@@ -60,6 +60,7 @@
     [self.view addSubview:_shop];
     return _shop;
 }
+
 -(UIImageView*)imgCar{
     if (!_imgCar) {
         _imgCar = [[UIImageView alloc] init];
