@@ -15,6 +15,10 @@
     CGRect rect = self.frame;
     rect.size = size;
     self.frame = rect;
+    //在指定的宽度下，让UILabel自动设置最佳font
+    self.adjustsFontSizeToFitWidth = YES;
     return self.frame.size;
 }
+
+
 @end

@@ -1,0 +1,644 @@
+//
+//  SumFileHeader.pch
+//  planGodDelgate
+//
+//  Created by ZeroSmile on 2017/7/1.
+//  Copyright © 2017年 DFC. All rights reserved.
+//
+
+#ifndef SumFileHeader_pch
+#define SumFileHeader_pch
+
+#define WeakSelf(type)  __weak typeof(type) weak##type = type; // weak
+#define StrongSelf(type)  __strong typeof(type) type = weak##type; // strong
+
+//由角度转换弧度
+#define DegreesToRadian(x) (M_PI * (x) / 180.0)
+//由弧度转换角度
+#define RadianToDegrees(radian) (radian*180.0)/(M_PI)
+//获取图片资源
+#define GetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+
+//获取temp
+#define PathTemp NSTemporaryDirectory()
+//获取沙盒 Document
+#define PathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+
+//获取沙盒 Cache
+#define PathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask
+
+//GCD代码只执行一次
+#define kDISPATCH_ONCE_BLOCK(onceBlock) static dispatch_once_t onceToken; dispatch_once(&onceToken, onceBlock);
+
+//设置字体
+#define FontL(s)             [UIFont systemFontOfSize:s weight:UIFontWeightLight]
+#define FontR(s)             [UIFont systemFontOfSize:s weight:UIFontWeightRegular]
+#define FontB(s)             [UIFont systemFontOfSize:s weight:UIFontWeightBold]
+#define FontT(s)             [UIFont systemFontOfSize:s weight:UIFontWeightThin]
+#define Font(s)              FontL(s)
+
+//在主线程上运行
+#define kDISPATCH_MAIN_THREAD(mainQueueBlock) dispatch_async(dispatch_get_main_queue(), mainQueueBlock);
+
+//开启异步线程
+#define kDISPATCH_GLOBAL_QUEUE_DEFAULT(globalQueueBlock) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), globalQueueBlocl);
+
+//定义通知
+#define NOTIF_ADD(n, f)     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(f) name:n object:nil]
+#define NOTIF_POST(n, o)    [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
+#define NOTIF_REMV()        [[NSNotificationCenter defaultCenter] removeObserver:self]
+
+// 禁用button高亮
+button.adjustsImageWhenHighlighted = NO;
+UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+
+// options是动画选项
+[UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    BOOL oldState = [UIView areAnimationsEnabled];
+    [UIView setAnimationsEnabled:NO];
+    [UIApplication sharedApplication].keyWindow.rootViewController = [RootViewController new];
+    [UIView setAnimationsEnabled:oldState];
+} completion:^(BOOL finished) {
+}];
+
+//去除数组中重复的对象
+NSArray *newArr = [oldArr valueForKeyPath:@"@distinctUnionOfObjects.self"];
+
+//给一个view截图
+UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0.0);
+[view.layer renderInContext:UIGraphicsGetCurrentContext()];
+UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+
+//collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：
+collectionView.alwaysBounceHorizontal = YES;
+collectionView.alwaysBounceVertical = YES;
+
+//设置navigationBar上的title颜色和大小
+[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor youColor], NSFontAttributeName : [UIFont systemFontOfSize:15]}]
+
+//颜色转图片
++ (UIImage *)cl_imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+//获取随机颜色
++ (UIColor *)RandomColor {
+    NSInteger aRedValue = arc4random() % 255;
+    NSInteger aGreenValue = arc4random() % 255;
+    NSInteger aBlueValue = arc4random() % 255;
+    UIColor *randColor = [UIColor colorWithRed:aRedValue / 255.0f green:aGreenValue / 255.0f blue:aBlueValue / 255.0f alpha:1.0f];
+    return randColor;
+}
+
+//获取window
++(UIWindow*)getWindow {
+    UIWindow* win = nil; //[UIApplication sharedApplication].keyWindow;
+    for (id item in [UIApplication sharedApplication].windows) {
+        if ([item class] == [UIWindow class]) {
+            if (!((UIWindow*)item).hidden) {
+                win = item;
+                break;
+            }
+        }
+    }
+    return win;
+}
+
+//修改textField的placeholder的字体颜色、大小
+[textField setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
+[textField setValue:[UIFont boldSystemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];
+//统一收起键盘
+[[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+[[[UIApplication sharedApplication] keyWindow] resignFirstResponder];
+
+/** 是否支持自动转屏 */
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+/** 支持哪些屏幕方向 */
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+}
+
+/** 默认的屏幕方向（当前ViewController必须是通过模态出来的UIViewController（模态带导航的无效）方式展现出来的，才会调用这个方法） */
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight;}
+
+
+//获取app缓存大小
+- (CGFloat)getCachSize {
+    //SDImageCache
+    NSUInteger imageCacheSize = [[SDImageCache sharedImageCache] getSize];
+    //获取自定义缓存大小
+    //用枚举器遍历 一个文件夹的内容
+    //1.获取 文件夹枚举器
+    NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:myCachePath];
+    __block NSUInteger count = 0;
+    //2.遍历
+    for (NSString *fileName in enumerator) {
+        NSString *path = [myCachePath stringByAppendingPathComponent:fileName];
+        NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+        count += fileDict.fileSize;//自定义所有缓存大小
+    }
+    // 得到是字节  转化为M
+    CGFloat totalSize = ((CGFloat)imageCacheSize+count)/1024/1024;
+    return totalSize;
+}
+
+- (void)handleClearView {
+    //删除两部分
+    //1.删除 sd 图片缓存
+    //先清除内存中的图片缓存
+    [[SDImageCache sharedImageCache] clearMemory];
+    //清除磁盘的缓存
+    [[SDImageCache sharedImageCache] clearDisk];
+    //2.删除自己缓存
+    NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+    [[NSFileManager defaultManager] removeItemAtPath:myCachePath error:nil];
+}
+
+
+//打印百分号和引号
+
+NSLog(@"%%");
+NSLog(@"\"");
+
+//几个常用权限判断
+if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {
+    NSLog(@"没有定位权限");
+}
+AVAuthorizationStatus statusVideo = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+if (statusVideo == AVAuthorizationStatusDenied) {
+    NSLog(@"没有摄像头权限");
+}
+//是否有麦克风权限
+AVAuthorizationStatus statusAudio = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+if (statusAudio == AVAuthorizationStatusDenied) {
+    NSLog(@"没有录音权限");
+}
+[PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+    if (status == PHAuthorizationStatusDenied) {
+        NSLog(@"没有相册权限");
+    }
+}];
+
+//长按复制功能
+- (void)viewDidLoad
+{
+    [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pasteBoard:)]];
+}
+- (void)pasteBoard:(UILongPressGestureRecognizer *)longPress {
+    if (longPress.state == UIGestureRecognizerStateBegan) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = @"需要复制的文本";
+    }
+}
+
+//通过图片Data数据第一个字节 来获取图片扩展名
+- (NSString *)contentTypeForImageData:(NSData *)data
+{
+    uint8_t c;
+    [data getBytes:&c length:1];
+    switch (c)
+    {
+        case 0xFF:
+            return @"jpeg";
+            
+        case 0x89:
+            return @"png";
+            
+        case 0x47:
+            return @"gif";
+            
+        case 0x49:
+        case 0x4D:
+            return @"tiff";
+            
+        case 0x52:
+            if ([data length] < 12) {
+                return nil;
+            }
+            
+            NSString *testString = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
+            if ([testString hasPrefix:@"RIFF"]
+                && [testString hasSuffix:@"WEBP"])
+            {
+                return @"webp";
+            }
+            
+            return nil;
+    }
+    
+    return nil;
+}
+
+
+NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+CFShow(infoDictionary);
+// app名称
+NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+// app版本
+NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+// app build版本
+NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
+
+
+
+//手机序列号
+NSString* identifierNumber = [[UIDevice currentDevice] uniqueIdentifier];
+NSLog(@"手机序列号: %@",identifierNumber);
+//手机别名： 用户定义的名称
+NSString* userPhoneName = [[UIDevice currentDevice] name];
+NSLog(@"手机别名: %@", userPhoneName);
+//设备名称
+NSString* deviceName = [[UIDevice currentDevice] systemName];
+NSLog(@"设备名称: %@",deviceName );
+//手机系统版本
+NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+NSLog(@"手机系统版本: %@", phoneVersion);
+//手机型号
+NSString* phoneModel = [[UIDevice currentDevice] model];
+NSLog(@"手机型号: %@",phoneModel );
+//地方型号  （国际化区域名称）
+NSString* localPhoneModel = [[UIDevice currentDevice] localizedModel];
+NSLog(@"国际化区域名称: %@",localPhoneModel );
+
+NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+// 当前应用名称
+NSString *appCurName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+NSLog(@"当前应用名称：%@",appCurName);
+// 当前应用软件版本  比如：1.0.1
+NSString *appCurVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+NSLog(@"当前应用软件版本:%@",appCurVersion);
+// 当前应用版本号码   int类型
+NSString *appCurVersionNum = [infoDictionary objectForKey:@"CFBundleVersion"];
+NSLog(@"当前应用版本号码：%@",appCurVersionNum);
+
+
+
+//获取一个类的所有属性
+id LenderClass = objc_getClass("Lender");
+unsigned int outCount, i;
+objc_property_t *properties = class_copyPropertyList(LenderClass, &outCount);
+for (i = 0; i < outCount; i++) {
+    objc_property_t property = properties[i];
+    fprintf(stdout, "%s %s\n", property_getName(property), property_getAttributes(property));
+}
+
+- (UIImage *)circleImage
+{
+    // NO代表透明
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);
+    // 获得上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    // 添加一个圆
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    // 方形变圆形
+    CGContextAddEllipseInRect(ctx, rect);
+    // 裁剪
+    CGContextClip(ctx);
+    // 将图片画上去
+    [self drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+//image拉伸
++ (UIImage *)resizableImage:(NSString *)imageName
+{
+    UIImage *image = [UIImage imageNamed:imageName];
+    CGFloat imageW = image.size.width;
+    CGFloat imageH = image.size.height;
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(imageH * 0.5, imageW * 0.5, imageH * 0.5, imageW * 0.5) resizingMode:UIImageResizingModeStretch];
+}
+
+//JSON字符串转字典
++ (NSDictionary *)parseJSONStringToNSDictionary:(NSString *)JSONString {
+    NSData *JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableLeaves error:nil];
+    return responseJSON;
+}
+
+//身份证号验证
+- (BOOL)validateIdentityCard {
+    BOOL flag;
+    if (self.length <= 0) {
+        flag = NO;
+        return flag;
+    }
+    NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
+    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
+    return [identityCardPredicate evaluateWithObject:self];
+}
+
+//获取设备mac地址
++ (NSString *)macAddress {
+    int                 mib[6];
+    size_t              len;
+    char                *buf;
+    unsigned char       *ptr;
+    struct if_msghdr    *ifm;
+    struct sockaddr_dl  *sdl;
+    
+    mib[0] = CTL_NET;
+    mib[1] = AF_ROUTE;
+    mib[2] = 0;
+    mib[3] = AF_LINK;
+    mib[4] = NET_RT_IFLIST;
+    
+    if((mib[5] = if_nametoindex("en0")) == 0) {
+        printf("Error: if_nametoindex error\n");
+        return NULL;
+    }
+    
+    if(sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 1\n");
+        return NULL;
+    }
+    
+    if((buf = malloc(len)) == NULL) {
+        printf("Could not allocate memory. Rrror!\n");
+        return NULL;
+    }
+    
+    if(sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 2");
+        return NULL;
+    }
+    
+    ifm = (struct if_msghdr *)buf;
+    sdl = (struct sockaddr_dl *)(ifm + 1);
+    ptr = (unsigned char *)LLADDR(sdl);
+    NSString *outstring = [NSString stringWithFormat:@"X:X:X:X:X:X",
+                           *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
+    free(buf);
+    
+    return outstring;
+}
+
+//拿到当前正在显示的控制器，不管是push进去的，还是present进去的都能拿到
+- (UIViewController *)getVisibleViewControllerFrom:(UIViewController*)vc {
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self getVisibleViewControllerFrom:[((UINavigationController*) vc) visibleViewController]];
+    }else if ([vc isKindOfClass:[UITabBarController class]]){
+        return [self getVisibleViewControllerFrom:[((UITabBarController*) vc) selectedViewController]];
+    } else {
+        if (vc.presentedViewController) {
+            return [self getVisibleViewControllerFrom:vc.presentedViewController];
+        } else {
+            return vc;
+        }
+    }
+}
+
+// 动态添加属性的本质是: 让对象的某个属性与值产生关联
+objc_setAssociatedObject(self, WZBPlaceholderViewKey, placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+//获取runtime为一个类动态添加的属性
+objc_getAssociatedObject(self, WZBPlaceholderViewKey);
+
+//KVO监听某个对象的属性
+[self addObserver:self forKeyPath:property options:NSKeyValueObservingOptionNew context:nil];
+
+// 当监听的属性值变化的时候会来到这个方法
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"property"]) {
+        [self textViewTextChange];
+    } else {
+    }
+}
+
+//取图片某一点的颜色
+if (point.x < 0 || point.y < 0) return nil;
+
+CGImageRef imageRef = self.CGImage;
+NSUInteger width = CGImageGetWidth(imageRef);
+NSUInteger height = CGImageGetHeight(imageRef);
+if (point.x >= width || point.y >= height) return nil;
+
+unsigned char *rawData = malloc(height * width * 4);
+if (!rawData) return nil;
+
+CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+NSUInteger bytesPerPixel = 4;
+NSUInteger bytesPerRow = bytesPerPixel * width;
+NSUInteger bitsPerComponent = 8;
+CGContextRef context = CGBitmapContextCreate(rawData,
+                                             width,
+                                             height,
+                                             bitsPerComponent,
+                                             bytesPerRow,
+                                             colorSpace,
+                                             kCGImageAlphaPremultipliedLast
+                                             | kCGBitmapByteOrder32Big);
+if (!context) {
+    free(rawData);
+    return nil;
+}
+CGColorSpaceRelease(colorSpace);
+CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+CGContextRelease(context);
+
+int byteIndex = (bytesPerRow * point.y) + point.x * bytesPerPixel;
+CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
+CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
+CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
+CGFloat alpha = (rawData[byteIndex + 3] * 1.0) / 255.0;
+
+UIColor *result = nil;
+result = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+free(rawData);
+return result;
+
+
+
+//判断该图片是否有透明度通道
+- (BOOL)hasAlphaChannel
+{
+    CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);
+    return (alpha == kCGImageAlphaFirst ||
+            alpha == kCGImageAlphaLast ||
+            alpha == kCGImageAlphaPremultipliedFirst ||
+            alpha == kCGImageAlphaPremultipliedLast);
+}
+
+//获得灰度图
++ (UIImage*)covertToGrayImageFromImage:(UIImage*)sourceImage
+{
+    int width = sourceImage.size.width;
+    int height = sourceImage.size.height;
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+    CGContextRef context = CGBitmapContextCreate (nil,width,height,8,0,colorSpace,kCGImageAlphaNone);
+    CGColorSpaceRelease(colorSpace);
+    
+    if (context == NULL) {
+        return nil;
+    }
+    
+    CGContextDrawImage(context,CGRectMake(0, 0, width, height), sourceImage.CGImage);
+    CGImageRef contextRef = CGBitmapContextCreateImage(context);
+    UIImage *grayImage = [UIImage imageWithCGImage:contextRef];
+    CGContextRelease(context);
+    CGImageRelease(contextRef);
+    
+    return grayImage;
+}
+
+//根据bundle中的文件名读取图片
++ (UIImage *)imageWithFileName:(NSString *)name {
+    NSString *extension = @"png";
+    
+    NSArray *components = [name componentsSeparatedByString:@"."];
+    if ([components count] >= 2) {
+        NSUInteger lastIndex = components.count - 1;
+        extension = [components objectAtIndex:lastIndex];
+        
+        name = [name substringToIndex:(name.length-(extension.length+1))];
+    }
+    
+    // 如果为Retina屏幕且存在对应图片，则返回Retina图片，否则查找普通图片
+    if ([UIScreen mainScreen].scale == 2.0) {
+        name = [name stringByAppendingString:@"@2x"];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];
+        if (path != nil) {
+            return [UIImage imageWithContentsOfFile:path];
+        }
+    }
+    
+    if ([UIScreen mainScreen].scale == 3.0) {
+        name = [name stringByAppendingString:@"@3x"];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];
+        if (path != nil) {
+            return [UIImage imageWithContentsOfFile:path];
+        }
+    }
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];
+    if (path) {
+        return [UIImage imageWithContentsOfFile:path];
+    }
+    return nil;
+}
+
+//合并两个图片
++ (UIImage*)mergeImage:(UIImage*)firstImage withImage:(UIImage*)secondImage {
+    CGImageRef firstImageRef = firstImage.CGImage;
+    CGFloat firstWidth = CGImageGetWidth(firstImageRef);
+    CGFloat firstHeight = CGImageGetHeight(firstImageRef);
+    CGImageRef secondImageRef = secondImage.CGImage;
+    CGFloat secondWidth = CGImageGetWidth(secondImageRef);
+    CGFloat secondHeight = CGImageGetHeight(secondImageRef);
+    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
+    UIGraphicsBeginImageContext(mergedSize);
+    [firstImage drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];
+    [secondImage drawInRect:CGRectMake(0, 0, secondWidth, secondHeight)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+//根据bundle中的图片名创建imageview
++ (id)imageViewWithImageNamed:(NSString*)imageName
+{
+    return [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+}
+
+
+//为imageView添加倒影
+CGRect frame = self.frame;
+frame.origin.y += (frame.size.height + 1);
+
+UIImageView *reflectionImageView = [[UIImageView alloc] initWithFrame:frame];
+self.clipsToBounds = TRUE;
+reflectionImageView.contentMode = self.contentMode;
+[reflectionImageView setImage:self.image];
+reflectionImageView.transform = CGAffineTransformMakeScale(1.0, -1.0);
+
+CALayer *reflectionLayer = [reflectionImageView layer];
+
+CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+gradientLayer.bounds = reflectionLayer.bounds;
+gradientLayer.position = CGPointMake(reflectionLayer.bounds.size.width / 2, reflectionLayer.bounds.size.height * 0.5);
+gradientLayer.colors = [NSArray arrayWithObjects:
+                        (id)[[UIColor clearColor] CGColor],
+                        (id)[[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.3] CGColor], nil];
+
+gradientLayer.startPoint = CGPointMake(0.5,0.5);
+gradientLayer.endPoint = CGPointMake(0.5,1.0);
+reflectionLayer.mask = gradientLayer;
+
+[self.superview addSubview:reflectionImageView];
+
+// 画水印
+- (void) setImage:(UIImage *)image withWaterMark:(UIImage *)mark inRect:(CGRect)rect
+{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0)
+    {
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+    }
+    //原图
+    [image drawInRect:self.bounds];
+    //水印图
+    [mark drawInRect:rect];
+    UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.image = newPic;
+}
+
+//自定义cell选中背景颜色
+UIView *bgColorView = [[UIView alloc] init];
+bgColorView.backgroundColor = [UIColor redColor];
+[cell setSelectedBackgroundView:bgColorView];
+
+//将一个view放置在其兄弟视图的最上面
+[parentView bringSubviewToFront:yourView]
+
+//将一个view放置在其兄弟视图的最下面
+[parentView sendSubviewToBack:yourView]
+
+//UITextView中打开或禁用复制，剪切，选择，全选等功能
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    // 返回NO为禁用，YES为开启
+    // 粘贴
+    if (action == @selector(paste:)) return NO;
+    // 剪切
+    if (action == @selector(cut:)) return NO;
+    // 复制
+    if (action == @selector(copy:)) return NO;
+    // 选择
+    if (action == @selector(select:)) return NO;
+    // 选中全部
+    if (action == @selector(selectAll:)) return NO;
+    // 删除
+    if (action == @selector(delete:)) return NO;
+    // 分享
+    if (action == @selector(share)) return NO;
+    return [super canPerformAction:action withSender:sender];
+}
+
+//修改cell.imageView的大小
+UIImage *icon = [UIImage imageNamed:@""];
+CGSize itemSize = CGSizeMake(30, 30);
+UIGraphicsBeginImageContextWithOptions(itemSize, NO ,0.0);
+CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+[icon drawInRect:imageRect];
+cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+
+#endif /* SumFileHeader_pch */

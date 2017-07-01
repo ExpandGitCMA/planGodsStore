@@ -151,6 +151,7 @@
     return UITableViewCellEditingStyleDelete;//删除模式
 }
 
+
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_arraySource removeObjectAtIndex:indexPath.row];

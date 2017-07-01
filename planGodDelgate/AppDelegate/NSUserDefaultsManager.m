@@ -133,4 +133,24 @@ static NSString *const presentTimerCache = @"presentTimerCache";
     return nil;
 }
 
+//删除NSUserDefaults所有记录
+-(void)removeDefaults{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
+
+//方法二
+- (void)resetDefaults {
+    NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dict = [defs dictionaryRepresentation];
+    for (id key in dict) {
+        [defs removeObjectForKey:key];
+    }
+    [defs synchronize];
+}
+// 方法三
+-(void)removeDictUsefaults{
+     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+}
+
 @end

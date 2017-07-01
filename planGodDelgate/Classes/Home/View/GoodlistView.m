@@ -44,6 +44,7 @@
 @property(nonatomic,strong)NSMutableDictionary *params;
 @end
 
+static const  NSInteger  toHideRow;
 @implementation GoodlistView
 
 -(instancetype)initWithFrame:(CGRect)frame arraySource:(NSArray *)arraySource{
@@ -107,9 +108,11 @@
         }break;
             
         case 2:{
-
+           // 如果是你需要隐藏的那一行，返回高度为0
             GoodModel*model = [_arraySource SafetyObjectAtIndex:indexPath.row];
-            tableViewHeight  =  [model.goodsNname sizeWithForRowHeight];
+            if (indexPath.row!=toHideRow) {
+                tableViewHeight  =  [model.goodsNname sizeWithForRowHeight];
+            }
         }
             break;
         default:
@@ -172,6 +175,7 @@
                 GoodFlashsaleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlashsaleCell"];
                 [cell addTapGestureTarget:self action:@selector(goodTapGes:)];
                  tableCell = cell;
+          
                 
             }break;
             case 2:{

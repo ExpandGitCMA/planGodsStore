@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern void dispatch_safe_main(dispatch_block_t block);
+
 @interface ZYDirTool : NSObject
 
 + (NSString *)cachePath;

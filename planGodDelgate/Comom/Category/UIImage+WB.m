@@ -7,6 +7,9 @@
 //
 
 #import "UIImage+WB.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MPVolumeView.h>
+
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 @implementation UIImage (WB)
 
@@ -91,6 +94,39 @@
     // 返回新的改变大小后的图片
     return scaledImage;
 }
+
+//获取一个视频的第一帧图片
++(UIImage*)scalelSet:(NSString*)filepath{
+    NSURL *url = [NSURL URLWithString:filepath];
+    AVURLAsset *asset1 = [[AVURLAsset alloc] initWithURL:url options:nil];
+    AVAssetImageGenerator *generate1 = [[AVAssetImageGenerator alloc] initWithAsset:asset1];
+    generate1.appliesPreferredTrackTransform = YES;
+    NSError *err = NULL;
+    CMTime time = CMTimeMake(1, 2);
+    CGImageRef oneRef = [generate1 copyCGImageAtTime:time actualTime:NULL error:&err];
+    UIImage *one = [[UIImage alloc] initWithCGImage:oneRef];
+    return one;
+}
+
+//获取视频的时长
++ (NSInteger)getVideoTimeByUrlString:(NSString *)urlString {
+    NSURL *videoUrl = [NSURL URLWithString:urlString];
+    AVURLAsset *avUrl = [AVURLAsset assetWithURL:videoUrl];
+    CMTime time = [avUrl duration];
+    int seconds = ceil(time.value/time.timescale);
+    return seconds;
+}
+
+//UIImage和base64互转
+- (NSString *)encodeToBase64String:(UIImage *)image {
+    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+}
+
+- (UIImage *)decodeBase64ToImage:(NSString *)strEncodeData {
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:strEncodeData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [UIImage imageWithData:data];
+}
+
 
 
 @end

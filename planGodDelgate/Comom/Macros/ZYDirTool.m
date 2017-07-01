@@ -8,6 +8,16 @@
 
 #import "ZYDirTool.h"
 
+//获取主线程
+void dispatch_safe_main(dispatch_block_t block) {
+    if ([NSThread currentThread].isMainThread) {
+        block();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), block);
+    }
+}
+
+
 @implementation ZYDirTool
 
 +(NSString *)docPath{
