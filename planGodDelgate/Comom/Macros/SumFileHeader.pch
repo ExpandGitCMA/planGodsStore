@@ -48,6 +48,15 @@
 #define NOTIF_POST(n, o)    [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
 #define NOTIF_REMV()        [[NSNotificationCenter defaultCenter] removeObserver:self]
 
+/**
+ *  AirPlay
+ */
+- (void)addAirPlay{
+    MPVolumeView *volume = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 100, 44, 44)];
+    volume.showsVolumeSlider = NO;
+    [volume sizeToFit];
+    [_overlayView addSubview:volume];
+}
 // 禁用button高亮
 button.adjustsImageWhenHighlighted = NO;
 UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -33,6 +33,10 @@
 	<string>允许调用系统相册？</string>
 	<key>SBUsesNetwor</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LauncScreen</string>
 	<key>UIMainStoryboardFile</key>
