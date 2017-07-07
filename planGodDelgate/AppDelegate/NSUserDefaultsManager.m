@@ -68,8 +68,9 @@ static NSString *const presentTimerCache = @"presentTimerCache";
 
 - (void)getAdvertisingImage{
     // 获取广告图片
-    NSArray *imgLaunch = @[@"http://img1.126.net/channel6/2015/ad/2_1224a.jpg",@"http://pic2.16pic.com/00/07/27/16pic_727996_b.jpg",@"http://pic.downcc.com/upload/2016-8/2016820123739219310.jpeg",@"http://pic.qiantucdn.com/58pic/18/22/63/71D58PIC4eC_1024.jpg"];
-
+    NSArray *imgLaunch = @[@"http://img1.126.net/channel6/2015/ad/2_1224a.jpg",@"http://pic2.16pic.com/00/07/27/16pic_727996_b.jpg",@"http://pic.downcc.com/upload/2016-8/2016820123739219310.jpeg",@"http://pic.qiantucdn.com/58pic/18/22/63/71D58PIC4eC_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498135444861&di=1095df79abd21cbde8325517cd699c55&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01c2a355ebd6736ac7251df8445de5.jpg"];
+    
+    //随机获取图片
     NSString *imageUrl = imgLaunch[arc4random() % imgLaunch.count];
     // 获取图片名
     NSArray *stringArr = [imageUrl componentsSeparatedByString:@"/"];
@@ -130,6 +131,26 @@ static NSString *const presentTimerCache = @"presentTimerCache";
         return filePath;
     }
     return nil;
+}
+
+//删除NSUserDefaults所有记录
+-(void)removeDefaults{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
+
+//方法二
+- (void)resetDefaults {
+    NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dict = [defs dictionaryRepresentation];
+    for (id key in dict) {
+        [defs removeObjectForKey:key];
+    }
+    [defs synchronize];
+}
+// 方法三
+-(void)removeDictUsefaults{
+     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
 }
 
 @end

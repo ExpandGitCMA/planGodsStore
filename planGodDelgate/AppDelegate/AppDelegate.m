@@ -20,31 +20,14 @@
 @end
 
 @implementation AppDelegate
--(void)applicationDidFinishLaunching:(UIApplication *)application{
-    if ([[UIScreen screens] count]>1) {
-        [self prepareScreen:[[UIScreen screens] lastObject]];
-    }
-}
 
--(void)prepareScreen:(UIScreen*)connectScreen{
-      connectScreen.overscanCompensation  =   UIScreenOverscanCompensationInsetBounds;
-    CGRect frame = connectScreen.bounds;
-    UIWindow *window = [[UIWindow alloc]initWithFrame:frame];
-    [window setScreen:connectScreen];
-    //window.hidden = NO;
-}
 
--(void)didNotCenter{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenDidConnect:) name:UIScreenDidConnectNotification object:nil];
-}
-- (void)screenDidConnect:(NSNotification *)notification{
-    [self prepareScreen:[notification object]];
-}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //禁止手机睡眠
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     [self p_initLocalNotification:application];
     [self applicationDidFinishLaunch];
     [self registerReachability];
-    
     
     return YES;
 }
@@ -58,6 +41,7 @@
         advertiseView.backgroundColor = [UIColor whiteColor];
         [advertiseView show];
     }
+
     [[NSUserDefaultsManager shareManager]getAdvertisingImage];
 }
 

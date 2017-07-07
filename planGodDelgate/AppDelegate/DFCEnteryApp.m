@@ -46,6 +46,7 @@
     appDelegate.window.rootViewController = navi;
     appDelegate.window.backgroundColor = [UIColor whiteColor];
     if (![appDelegate.window isKeyWindow]) {
+        //成为主窗口
         [appDelegate.window makeKeyAndVisible];
     }
 }

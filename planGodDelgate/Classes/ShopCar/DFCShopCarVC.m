@@ -60,6 +60,7 @@
     [self.view addSubview:_shop];
     return _shop;
 }
+
 -(UIImageView*)imgCar{
     if (!_imgCar) {
         _imgCar = [[UIImageView alloc] init];
@@ -149,6 +150,7 @@
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewCellEditingStyleDelete;//删除模式
 }
+
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {

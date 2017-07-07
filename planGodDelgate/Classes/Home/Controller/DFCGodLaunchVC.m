@@ -15,6 +15,7 @@
 #import "GoodModel.h"
 #import "PlanConst.h"
 #import "DFCStatusUtility.h"
+
 @interface DFCGodLaunchVC ()<UIScrollViewDelegate,HotContentDelegate>
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,copy)NSArray*hotArray;
@@ -25,7 +26,10 @@
 @property(nonatomic,strong)NSMutableArray*arrayGoodsView;//标签复用view存储
 @end
 
+
+
 @implementation DFCGodLaunchVC
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,6 +40,8 @@
     [self scrollView];
     [self hotArray];
     [self setContent];
+
+ 
 }
 
 

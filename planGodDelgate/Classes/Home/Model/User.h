@@ -20,9 +20,21 @@ typedef enum {
 @property (copy, nonatomic) NSString *height;
 @property (strong, nonatomic) NSNumber *money;
 @property (assign, nonatomic) Sex sex;
+@property (nonatomic, copy) NSDictionary *modelClassMap;
+@property (nonatomic, copy) NSDictionary *modelClassUrl;
 @property (assign, nonatomic, getter=isGay) BOOL gay;
 +(User*)jsonWithKeyValuesModel;
 +(NSArray<NSObject *>*)parseWithJson:(NSArray *)list;
+
+/*
+ User *mdeol = [[User alloc]init];
+ mdeol.modelClassMap = GeneralModelClassMap();
+ NSString *url = [mdeol.modelClassMap   objectForKey:[GoodModel class]];
+ NSObject *class = [mdeol.modelClassMap  objectForKey:Goods_FetchCatFilterList];
+ DEBUG_NSLog(@"url=%@,class=%@",url,class);
+ //url=/goods/fetchCatSkuList.do,class=(null)
+ */
+
 @end
 
 

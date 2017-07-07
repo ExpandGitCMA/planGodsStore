@@ -239,4 +239,22 @@
     return NO;
 }
 
+//移除字符串中的空格和换行
++ (NSString *)removeSpaceAndNewline:(NSString *)str {
+    NSString *temp = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return temp;
+}
+//判断字符串中是否有空格
++ (BOOL)isBlank:(NSString *)str {
+    NSRange _range = [str rangeOfString:@" "];
+    if (_range.location != NSNotFound) {
+        //有空格
+        return YES;
+    } else {
+        //没有空格
+        return NO;
+    }
+}
 @end

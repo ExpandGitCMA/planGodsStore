@@ -10,7 +10,15 @@
 #import "PlanGodsHeaderFile.pch"
 #import "PersonRunTime.h"
 #import "NSObject+Property.h"
-@interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate>
+#import "GeneralModel.h"
+#import "ZYDirTool.h"
+//手机震动
+#import <AudioToolbox/AudioToolbox.h>
+//以下操作都需要导入头文件
+
+#import <Photos/Photos.h>
+
+@interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate,UIGestureRecognizerDelegate>
 @property(nonatomic,retain)HomeDataSourceViewModel *dataSourceViewModel;
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,weak)UISegmentedControl * control;
@@ -27,16 +35,35 @@
 static const NSInteger page = 1;//标签数量
 @implementation PlanHomeVC
 
+
+//禁用系统滑动返回功能
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    _control.hidden = YES;
+    _count.hidden = YES;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+}
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//
-//    NSObject *objc = [[NSObject alloc] init];
-//    objc.name = @"周立贺";
-//    NSLog(@"%@",objc.name);
-    
+  //resignFirstResponder
+   //打开摇一摇功能
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
+    //让需要摇动的控制器成为第一响应者
+    [self becomeFirstResponder];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
-  
    [self refreshDataSource:page];
    [self initNavigationView];
     [self count];
@@ -48,10 +75,21 @@ static const NSInteger page = 1;//标签数量
     [[DAOManager sharedInstanceDataDAO]shopCarManager];
     [self dictSource];
 
-//    [self.fileArchiveZip initWithPath];
-
+    [self.fileArchiveZip initWithPath];
 }
 
+// 开始摇动
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+
+}
+// 取消摇动
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+
+}
+// 摇动结束
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+
+}
 -(NSArray*)dictSource{
     if (!_dictSource) {
         _dictSource = [GoodKFCModel parseWithDict:NULL];
@@ -131,11 +169,7 @@ static const NSInteger page = 1;//标签数量
 }
 
 -(NSString*)pathCacheJsonFile{
-    //获取指定沙盒目录
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *docPath = [paths objectAtIndex:0];
-//    NSString *cacheFolder = [docPath stringByAppendingPathComponent:JSONFILE];
-  
+    //获取指定沙盒目录  
    NSString *cacheFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)firstObject];
     return [cacheFolder stringByAppendingPathComponent:JSONFILE];
 }
@@ -149,6 +183,8 @@ static const NSInteger page = 1;//标签数量
 
     [self.scrollView addSubview:account];
 }
+
+
 
 -(void)didSelectRowAtIndexPath:(PlanAccountView *)didSelectRowAtIndexPath IndexPath:(NSInteger)IndexPath{
     switch (IndexPath) {
@@ -169,8 +205,9 @@ static const NSInteger page = 1;//标签数量
         default:
             break;
     }
-    
 }
+
+
 -(void)showActionSheet{
     
     UIActionSheet *sheet =[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"回到第3层",@"回到第一层",@"进入第5层", nil];
@@ -262,11 +299,6 @@ static const NSInteger page = 1;//标签数量
    [super newNavigationBar];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    _control.hidden = YES;
-    _count.hidden = YES;
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
@@ -425,9 +457,28 @@ static const NSInteger page = 1;//标签数量
         NSString *cacheFile = [[self cacheFolder] stringByAppendingPathComponent:fileName];
         //将图片写入文件缓存
         [UIImageJPEGRepresentation(cacheImage, 0.6) writeToFile:cacheFile atomically:YES];
+        //写入相册
+        UIImageWriteToSavedPhotosAlbum(cacheImage, nil, nil, nil);
         DEBUG_NSLog(@"cacheFile==%@",[self cacheFolder]);
+        
+       
+        
     }];
     
+    UIImage*image;
+    //写入系统相册
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest *changeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        changeRequest.creationDate          = [NSDate date];
+    } completionHandler:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"successfully saved");
+        }
+        else {
+            NSLog(@"error saving to photos: %@", error);
+        }
+    }];
+
 }
 
 

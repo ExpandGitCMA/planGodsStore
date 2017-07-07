@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+//声明block回调
+typedef void(^MainQueueBlock)(id obj );
+
 @interface DFCGodLaunchVC : UIViewController
 @property (nonatomic, copy) NSString *adUrl;
+@property (nonatomic,copy) MainQueueBlock block;
 @end

@@ -41,6 +41,8 @@ static NSDateComponentsObject *componentsObject = nil;
 }
 
 -(NSInteger)nowayear{
+  
+    
     NSInteger year = [[self getNonceComponents]year];
     return year;
 }

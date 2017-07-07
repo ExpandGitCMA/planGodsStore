@@ -122,6 +122,8 @@
     _arraySource = [[DAOManager sharedInstanceDataDAO]searcManager];
     DEBUG_NSLog(@"arraySource==%@",_arraySource);
     [self tableViewReload];
+    
+
     return YES;
 }
 
