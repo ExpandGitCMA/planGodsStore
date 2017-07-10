@@ -70,6 +70,9 @@
 		B37691F11D87F21B00801DC6 /* DFCOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37691EF1D87F21B00801DC6 /* DFCOrderCell.xib */; };
 		B37691F41D87F59B00801DC6 /* DFCPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = B37691F31D87F59B00801DC6 /* DFCPayment.m */; };
 		B37691F61D87F6C700801DC6 /* DFCPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37691F51D87F6C700801DC6 /* DFCPayment.xib */; };
+		B376DD4F1F136BFF00D53F26 /* HotCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B376DD4E1F136BFF00D53F26 /* HotCollectionViewController.m */; };
+		B376DD521F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = B376DD511F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.m */; };
+		B376DD551F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B376DD541F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.m */; };
 		B376FA321DB9AA870066E995 /* DFCGodLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B376FA311DB9AA870066E995 /* DFCGodLaunchVC.m */; };
 		B380E1921DCB275200D8DD77 /* NSString+IMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B380E1911DCB275200D8DD77 /* NSString+IMAdditions.m */; };
 		B381F1071EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B381F1061EF12F5500D9EB4B /* img_Account_Jollychic_Logo.png */; };
@@ -351,6 +354,12 @@
 		B37691F21D87F59B00801DC6 /* DFCPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFCPayment.h; sourceTree = "<group>"; };
 		B37691F31D87F59B00801DC6 /* DFCPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCPayment.m; sourceTree = "<group>"; };
 		B37691F51D87F6C700801DC6 /* DFCPayment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DFCPayment.xib; sourceTree = "<group>"; };
+		B376DD4D1F136BFF00D53F26 /* HotCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCollectionViewController.h; sourceTree = "<group>"; };
+		B376DD4E1F136BFF00D53F26 /* HotCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCollectionViewController.m; sourceTree = "<group>"; };
+		B376DD501F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encrypt_MD5_Base64_AES_3DES.h"; sourceTree = "<group>"; };
+		B376DD511F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encrypt_MD5_Base64_AES_3DES.m"; sourceTree = "<group>"; };
+		B376DD531F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+WZBTabBarViewController.h"; sourceTree = "<group>"; };
+		B376DD541F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+WZBTabBarViewController.m"; sourceTree = "<group>"; };
 		B376FA301DB9AA870066E995 /* DFCGodLaunchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFCGodLaunchVC.h; sourceTree = "<group>"; };
 		B376FA311DB9AA870066E995 /* DFCGodLaunchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCGodLaunchVC.m; sourceTree = "<group>"; };
 		B380E1901DCB275200D8DD77 /* NSString+IMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IMAdditions.h"; sourceTree = "<group>"; };
@@ -963,6 +972,8 @@
 				B3D4DBEA1D82BE21003EF7D9 /* HistoryViewCell.h */,
 				B3D4DBEB1D82BE21003EF7D9 /* HistoryViewCell.m */,
 				B3D4DBEC1D82BE21003EF7D9 /* HistoryViewCell.xib */,
+				B376DD4D1F136BFF00D53F26 /* HotCollectionViewController.h */,
+				B376DD4E1F136BFF00D53F26 /* HotCollectionViewController.m */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1048,6 +1059,10 @@
 				B34CA87F1EEAAA42005F60D1 /* UIImage+WB.m */,
 				B38833991F077ADF00122652 /* DFCLabelRectForBounds.h */,
 				B388339A1F077ADF00122652 /* DFCLabelRectForBounds.m */,
+				B376DD501F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.h */,
+				B376DD511F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.m */,
+				B376DD531F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.h */,
+				B376DD541F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1468,6 +1483,7 @@
 				B3A98E651ECECCF400BBBF7D /* ioapi.c in Sources */,
 				B3B02DFF1EF3B31E0074B414 /* UserView.m in Sources */,
 				B33F12FD1EB34B2C00AFF8A2 /* Person.m in Sources */,
+				B376DD521F136E8300D53F26 /* NSString+Encrypt_MD5_Base64_AES_3DES.m in Sources */,
 				B3C13FED1D86A57B00463689 /* ShopCarCount.m in Sources */,
 				B388339B1F077ADF00122652 /* DFCLabelRectForBounds.m in Sources */,
 				B30FAFC11EE6770E00D64F8D /* NSDateComponentsObject.m in Sources */,
@@ -1507,6 +1523,7 @@
 				B34CA8741EEAA316005F60D1 /* UIButton+ActionButton.m in Sources */,
 				B3C4A3AC1E31A8A300167084 /* DFCMyDataSource.m in Sources */,
 				B373B6661E974E3400DEE23D /* NetworkLoading.m in Sources */,
+				B376DD4F1F136BFF00D53F26 /* HotCollectionViewController.m in Sources */,
 				B3BB0B921D811D4000D6466A /* PlanSearchVC.m in Sources */,
 				B37691E51D87E69700801DC6 /* DFCDeliAddress.m in Sources */,
 				B3FF5F831EC9942700EF1176 /* FMResultSet.m in Sources */,
@@ -1531,6 +1548,7 @@
 				B370B3EA1E8F9D8100BDD0DA /* Safety.m in Sources */,
 				B3B347481EEFFB0C00F74FD7 /* LauncScreen.m in Sources */,
 				B33367341F011C83000B3A9C /* NSDate+HMObjcSugar.m in Sources */,
+				B376DD551F1376FB00D53F26 /* UITabBarController+WZBTabBarViewController.m in Sources */,
 				B3C6A19D1DC99BAB00272F51 /* IMColor.m in Sources */,
 				B381F1281EF1330200D9EB4B /* NSObject+MJProperty.m in Sources */,
 				B3B02DF91EF38EAE0074B414 /* NSObject+Property.m in Sources */,

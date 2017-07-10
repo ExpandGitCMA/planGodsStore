@@ -9,6 +9,15 @@
 #import "DFCPayment.h"
 
 @implementation DFCPayment
+//将一个xib添加到另外一个xib上
+// 假设你的自定义view名字为CustomView，你需要在CustomView.m中重写 `- (instancetype)initWithCoder:(NSCoder *)aDecoder` 方法，代码如下：
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self addSubview:[[[NSBundle mainBundle] loadNibNamed:@"CustomView" owner:self options:nil] objectAtIndex:0]];
+    }
+    return self;
+}
+
 +(DFCPayment*)initWithDFCPaymentViewFrame:(CGRect)frame{
     DFCPayment *payment = [[[NSBundle mainBundle] loadNibNamed:@"DFCPayment" owner:self options:nil] firstObject];
     payment.frame = frame;

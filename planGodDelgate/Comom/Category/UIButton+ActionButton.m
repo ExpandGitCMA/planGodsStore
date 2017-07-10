@@ -57,4 +57,34 @@ static NSString *keyOfBlock;
 - (ActionBlock)actionBlock{
     return objc_getAssociatedObject (self ,&keyOfBlock);
 }
+
+
+//设置UIButton高亮时的背景颜色
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    
+    UIColor *normalColor = [UIColor greenColor];
+    UIColor *highlightedColor = [UIColor redColor];
+    self.backgroundColor = highlighted ? highlightedColor : normalColor;
+    
+}
+
+// 方法二、利用setBackgroundImage:forState:方法
+-(void)setHighlightedState{
+   [self setBackgroundImage:[self.class imageWithColor:[UIColor blueColor]] forState:UIControlStateHighlighted];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
 @end

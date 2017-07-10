@@ -84,9 +84,8 @@
     return [NSArray arrayWithArray:mutableList];
 }
 
-/**
+/**利用runtime获取一个类所有属性
  获取协议列表
- 
  @param class <#class description#>
  @return <#return value description#>
  */

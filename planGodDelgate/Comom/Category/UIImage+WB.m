@@ -95,6 +95,26 @@
     return scaledImage;
 }
 
+// 防止离屏渲染为image添加圆角 image分类
+- (UIImage *)circleImage
+{
+    // NO代表透明
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);
+    // 获得上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    // 添加一个圆
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    // 方形变圆形
+    CGContextAddEllipseInRect(ctx, rect);
+    // 裁剪
+    CGContextClip(ctx);
+    // 将图片画上去
+    [self drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 //获取一个视频的第一帧图片
 +(UIImage*)scalelSet:(NSString*)filepath{
     NSURL *url = [NSURL URLWithString:filepath];
@@ -154,5 +174,122 @@
     }
     
     return degress;
+}
+
+ //在image上绘制文字并生成新的image
+- (UIImage *)circleImage:(UIImage*)image text:(NSString*)text {
+   
+    CGPoint *point = NULL;
+
+    UIFont *font = [UIFont boldSystemFontOfSize:12];
+    UIGraphicsBeginImageContext(image.size);
+    [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+    CGRect rect = CGRectMake(point->x, point->y, image.size.width, image.size.height);
+    [[UIColor whiteColor] set];
+    [text drawInRect:CGRectIntegral(rect) withFont:font];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+// 方法一、添加UIImage分类
+- (UIImage *)imageByApplyingAlpha:(CGFloat) alpha {
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
+    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGRect area = CGRectMake(0, 0, self.size.width, self.size.height);
+    
+    CGContextScaleCTM(ctx, 1, -1);
+    CGContextTranslateCTM(ctx, 0, -area.size.height);
+    
+    CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
+    
+    CGContextSetAlpha(ctx, alpha);
+    
+    CGContextDrawImage(ctx, area, self.CGImage);
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    // 方法二、如果没有奇葩需求，干脆用UIImageView设置透明度
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithName:@"yourImage"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yourImage"]];
+    imageView.alpha = 0.5;
+    
+    return newImage;
+}
+
+//比较两个UIImage是否相等
+- (BOOL)image:(UIImage *)image1 isEqualTo:(UIImage *)image2
+{
+    NSData *data1 = UIImagePNGRepresentation(image1);
+    NSData *data2 = UIImagePNGRepresentation(image2);
+    
+    return [data1 isEqual:data2];
+}
+
+//修改image颜色
+- (UIImage *)imageByApplyingColor:(UIImageView*) imageView{
+    UIImage *image = [UIImage imageNamed:@"test"];
+    
+    imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextClipToMask(context, rect, image.CGImage);
+    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImage *flippedImage = [UIImage imageWithCGImage:img.CGImage scale:1.0 orientation: UIImageOrientationDownMirrored];
+    imageView.image = flippedImage;
+    
+    return flippedImage;
+}
+
+-(UIImage *)resizeImage:(UIImage *)image
+{
+    float actualHeight = image.size.height;
+    float actualWidth = image.size.width;
+    float maxHeight = 300.0;
+    float maxWidth = 400.0;
+    float imgRatio = actualWidth/actualHeight;
+    float maxRatio = maxWidth/maxHeight;
+    float compressionQuality = 0.5;//50 percent compression
+    
+    if (actualHeight > maxHeight || actualWidth > maxWidth)
+    {
+        if(imgRatio < maxRatio)
+        {
+            //adjust width according to maxHeight
+            imgRatio = maxHeight / actualHeight;
+            actualWidth = imgRatio * actualWidth;
+            actualHeight = maxHeight;
+        }
+        else if(imgRatio > maxRatio)
+        {
+            //adjust height according to maxWidth
+            imgRatio = maxWidth / actualWidth;
+            actualHeight = imgRatio * actualHeight;
+            actualWidth = maxWidth;
+        }
+        else
+        {
+            actualHeight = maxHeight;
+            actualWidth = maxWidth;
+        }
+    }
+    
+    CGRect rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    [image drawInRect:rect];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData = UIImageJPEGRepresentation(img, compressionQuality);
+    UIGraphicsEndImageContext();
+    
+    return [UIImage imageWithData:imageData];
+    
 }
 @end

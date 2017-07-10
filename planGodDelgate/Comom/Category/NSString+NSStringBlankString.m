@@ -12,6 +12,15 @@ static NSUInteger  const rowHeight = 200;
 
 @implementation NSString (NSStringBlankString)
 
+-(void)isNSNulstring:(NSString*)string{
+    NSCharacterSet *notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    if ([string rangeOfCharacterFromSet:notDigits].location == NSNotFound){
+        // 是数字
+    } else{
+        // 不是数字
+    }
+}
+
 - (BOOL)isNSNulString{
     if (self == nil || self == NULL) {
         return YES;

@@ -10,13 +10,67 @@
 
 @implementation DFCLabelRectForBounds
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+
+-(void)transtAnimation{
+//动画修改label上的文字
+    // 方法一
+    CATransition *animation = [CATransition animation];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.type = kCATransitionFade;
+    animation.duration = 0.75;
+    [self.layer addAnimation:animation forKey:@"kCATransitionFade"];
+    self.text = @"New";
+    
+    // 方法二
+    [UIView transitionWithView:self
+                      duration:0.25f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.text = @"Well done!";
+                    } completion:nil];
+    
+    // 方法三
+    [UIView animateWithDuration:1.0
+                     animations:^{
+                         self.alpha = 0.0f;
+                         self.text = @"newText";
+                         self.alpha = 1.0f;
+                     }];
 }
-*/
+
+-(void)drawRect:(CGRect)rect IntersRect:(CGRect)intersrect{
+    //判断两个rect是否有交叉
+    if (CGRectIntersectsRect(rect, intersrect)) {
+    }
+}
+
+
+- (void)drawRectAttributedString:(UILabel*)label{
+    //设置UILabel行间距
+    NSMutableAttributedString* attrString = [[NSMutableAttributedString  alloc] initWithString:label.text];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:20];
+    [attrString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, label.text.length)];
+    label.attributedText = attrString;
+    
+    
+   //UILabel显示不同颜色字体
+    NSMutableAttributedString * string = [[NSMutableAttributedString alloc] initWithString:label.text];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(5,6)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(11,5)];
+    label.attributedText = string;
+    
+    // 查看系统所有字体
+    for (id familyName in [UIFont familyNames]) {
+        NSLog(@"%@", familyName);
+        for (id fontName in [UIFont fontNamesForFamilyName:familyName]) NSLog(@"  %@", fontName);
+    }
+    // 也可以进入这个网址查看 http://iosfonts.com/
+}
+
+
 
 // 重写label的textRectForBounds方法 让label的文字内容显示在左上／右上／左下／右下／中心顶／中心底部
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {

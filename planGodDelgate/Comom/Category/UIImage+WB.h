@@ -35,5 +35,5 @@
  *  返回指定压缩尺寸的图片
  */
 - (UIImage*)scaleToSize:(CGSize)size;
-
+-(UIImage *)resizeImage:(UIImage *)image;
 @end

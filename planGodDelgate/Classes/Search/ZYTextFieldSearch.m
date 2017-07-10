@@ -32,9 +32,21 @@
         self.borderStyle = UITextBorderStyleNone;
         self.placeholder = @"Search";
         self.tintColor = UIColorFromRGB(DefaulColor);
-      
+        //当UITextView/UITextField中没有文字时，禁用回车键
+       self.enablesReturnKeyAutomatically = YES;
+        // 设置某个键盘颜色 self.keyboardAppearance = UIKeyboardAppearanceAlert;
+        // 设置工程中所有键盘颜色 [[UITextField appearance] setKeyboardAppearance:UIKeyboardAppearanceAlert];
     }
     return self;
+}
+//UITextView中的文字添加阴影效果
+- (void)setTextLayer:(UITextView *)textView color:(UIColor *)color
+{
+    CALayer *textLayer = ((CALayer *)[textView.layer.sublayers objectAtIndex:0]);
+    textLayer.shadowColor = color.CGColor;
+    textLayer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    textLayer.shadowOpacity = 1.0f;
+    textLayer.shadowRadius = 1.0f;
 }
 
 //控制搜索图片的位置，用到图片宽高
@@ -68,5 +80,17 @@
     CGRect inset = CGRectMake(bounds.origin.x +29, bounds.origin.y, bounds.size.width -50, bounds.size.height);
     return inset;
 }
-
+//自动搜索功能，用户连续输入的时候不搜索，用户停止输入的时候自动搜索(我这里设置的是0.5s，可根据需求更改)
+// 输入框文字改变的时候调用
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    // 先取消调用搜索方法
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(searchNewResult) object:nil];
+    // 0.5秒后调用搜索方法
+    [self performSelector:@selector(searchNewResult) withObject:nil afterDelay:0.5];
+    
+    // 方法一（推荐使用修改UISearchBar的占位文字颜色）
+    UITextField *searchField = [searchBar valueForKey:@"_searchField"];
+    [searchField setValue:[UIColor blueColor] forKeyPath:@"_placeholderLabel.textColor"];
+    
+}
 @end

@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 边框方向
+ 
+ - WZBBorderDirectionTop: 顶部
+ - WZBBorderDirectionLeft: 左边
+ - WZBBorderDirectionBottom: 底部
+ - WZBBorderDirectionRight: 右边
+ */
+typedef NS_ENUM(NSInteger, WZBBorderDirectionType) {
+    WZBBorderDirectionTop = 0,
+    WZBBorderDirectionLeft,
+    WZBBorderDirectionBottom,
+    WZBBorderDirectionRight
+};
+
+
 @interface UIView (Utils)
 /**
  *  Description

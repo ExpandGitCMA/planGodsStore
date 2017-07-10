@@ -14,7 +14,6 @@
 {
     for (UIView *next = [self superview]; next; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder];
-        
         if ([nextResponder isKindOfClass:[UIViewController class]]) {
             return (UIViewController *)nextResponder;
         }
@@ -22,6 +21,18 @@
     return nil;
 }
 
+//获取当前导航控制器下前一个控制器
+- (UIViewController *)backViewController
+{
+//    NSInteger myIndex = [self.navigationController.viewControllers indexOfObject:self];
+//    
+//    if ( myIndex != 0 && myIndex != NSNotFound ) {
+//        return [self.navigationController.viewControllers objectAtIndex:myIndex-1];
+//    } else {
+//        return nil;
+//    }
+     return nil;
+}
 - (id)ancestorOrSelfWithClass:(Class)cls {
     if ([self isKindOfClass:cls]) {
         return self;
@@ -136,4 +147,23 @@
     self.center = CGPointMake(self.center.x, centerY);
 }
 
+//键盘上方增加工具栏
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    UIToolbar *keyboardDoneButtonView = [[UIToolbar alloc] init];
+    [keyboardDoneButtonView sizeToFit];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done"
+                                   style:UIBarButtonItemStyleBordered target:self
+                                   action:@selector(doneClicked:)];
+    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    
+    UITextField*textField;
+    textField.inputAccessoryView = keyboardDoneButtonView;
+}
+
+
+-(void)doneClicked:(UIBarButtonItem*)sender{
+    
+}
 @end

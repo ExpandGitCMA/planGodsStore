@@ -13,6 +13,10 @@
 static int _intFlag;
 static NSString *_strFlag;
 
+
+
+
+
 - (void)setStrFlag:(NSString *)flag {
     // void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy)
     objc_setAssociatedObject(self, &_strFlag, flag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
