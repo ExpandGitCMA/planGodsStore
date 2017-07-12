@@ -8,6 +8,9 @@
 
 #import "CalculateFileSize.h"
 #import "PlanConst.h"
+#include <sys/types.h>
+#include<sys/stat.h>
+
 static CalculateFileSize *caCheFile = nil;
 @interface CalculateFileSize ()
 
@@ -54,6 +57,27 @@ static CalculateFileSize *caCheFile = nil;
     return size/(1024*1024);
 }
 
+// 循环调用fileSizeAtPath来获取一个目录所占空间大小
++ (long long) folderSizeAtPath:(NSString*) folderPath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:folderPath]) return 0;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
+    NSString* fileName;
+    long long folderSize = 0;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil){
+        NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+        folderSize += [self fileSizeAtPath:fileAbsolutePath];
+    }
+    return folderSize;
+}
+//使用c语言获取目录下的缓存大小
++ (long long) fileSizeAtPath:(NSString*) filePath{
+    struct stat st;
+    if(lstat([filePath cStringUsingEncoding:NSUTF8StringEncoding], &st) == 0){
+        return st.st_size;
+    }
+    return 0;
+}
 -(void)clearCache:(NSString *)path{
     
     NSFileManager *fileManager = [NSFileManager defaultManager];

@@ -59,9 +59,9 @@ static const NSInteger page = 1;//标签数量
     [super viewDidLoad];
   //resignFirstResponder
    //打开摇一摇功能
-    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
-    //让需要摇动的控制器成为第一响应者
-    [self becomeFirstResponder];
+//    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
+//    //让需要摇动的控制器成为第一响应者
+//    [self becomeFirstResponder];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
    [self refreshDataSource:page];
@@ -569,52 +569,52 @@ static NSUInteger const sourceImageCompressHeight = 600;
 }
 
 
--(void)xxx{
-    //让导航控制器pop回指定的控制器
-    NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
-    for (UIViewController *aViewController in allViewControllers) {
-        if ([aViewController isKindOfClass:[UIViewController class]]) {
-            [self.navigationController popToViewController:aViewController animated:NO];
-        }
-    }
-    
-    //从导航控制器中删除某个控制器
-    // 方法一、知道这个控制器所处的导航控制器下标
-    NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
-    [navigationArray removeObjectAtIndex: 2];
-    self.navigationController.viewControllers = navigationArray;
-    
-    // 方法二、知道具体是哪个控制器
-    NSArray* tempVCA = [self.navigationController viewControllers];
-    for(UIViewController *tempVC in tempVCA)
-    {
-        if([tempVC isKindOfClass:[UIViewController class]])
-        {
-            [tempVC removeFromParentViewController];
-        
-        }
-    }
-}
-//让push跳转动画像modal跳转动画那样效果(从下往上推上来)
-- (void)push
-{
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor redColor];
-    CATransition* transition = [CATransition animation];
-    transition.duration = 0.4f;
-    transition.type = kCATransitionMoveIn;
-    transition.subtype = kCATransitionFromTop;
-    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
-    [self.navigationController pushViewController:vc animated:NO];
-}
-
-- (void)pop
-{
-    CATransition* transition = [CATransition animation];
-    transition.duration = 0.4f;
-    transition.type = kCATransitionReveal;
-    transition.subtype = kCATransitionFromBottom;
-    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
-    [self.navigationController popViewControllerAnimated:NO];
-}
+//-(void)xxx{
+//    //让导航控制器pop回指定的控制器
+//    NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
+//    for (UIViewController *aViewController in allViewControllers) {
+//        if ([aViewController isKindOfClass:[UIViewController class]]) {
+//            [self.navigationController popToViewController:aViewController animated:NO];
+//        }
+//    }
+//    
+//    //从导航控制器中删除某个控制器
+//    // 方法一、知道这个控制器所处的导航控制器下标
+//    NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+//    [navigationArray removeObjectAtIndex: 2];
+//    self.navigationController.viewControllers = navigationArray;
+//    
+//    // 方法二、知道具体是哪个控制器
+//    NSArray* tempVCA = [self.navigationController viewControllers];
+//    for(UIViewController *tempVC in tempVCA)
+//    {
+//        if([tempVC isKindOfClass:[UIViewController class]])
+//        {
+//            [tempVC removeFromParentViewController];
+//        
+//        }
+//    }
+//}
+////让push跳转动画像modal跳转动画那样效果(从下往上推上来)
+//- (void)push
+//{
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.view.backgroundColor = [UIColor redColor];
+//    CATransition* transition = [CATransition animation];
+//    transition.duration = 0.4f;
+//    transition.type = kCATransitionMoveIn;
+//    transition.subtype = kCATransitionFromTop;
+//    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+//    [self.navigationController pushViewController:vc animated:NO];
+//}
+//
+//- (void)pop
+//{
+//    CATransition* transition = [CATransition animation];
+//    transition.duration = 0.4f;
+//    transition.type = kCATransitionReveal;
+//    transition.subtype = kCATransitionFromBottom;
+//    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+//    [self.navigationController popViewControllerAnimated:NO];
+//}
 @end
