@@ -13,7 +13,7 @@
 #import "GeneralModel.h"
 #import "ZYDirTool.h"
 //手机震动
-#import <AudioToolbox/AudioToolbox.h>
+//#import <AudioToolbox/AudioToolbox.h>
 //以下操作都需要导入头文件
 
 #import <Photos/Photos.h>
@@ -59,9 +59,9 @@ static const NSInteger page = 1;//标签数量
     [super viewDidLoad];
   //resignFirstResponder
    //打开摇一摇功能
-//    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
-//    //让需要摇动的控制器成为第一响应者
-//    [self becomeFirstResponder];
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
+    //让需要摇动的控制器成为第一响应者
+    [self becomeFirstResponder];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushLaunch:) name:@"pushLaunch" object:nil];
    [self refreshDataSource:page];
@@ -78,18 +78,18 @@ static const NSInteger page = 1;//标签数量
     [self.fileArchiveZip initWithPath];
 }
 
-// 开始摇动
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-
-}
-// 取消摇动
-- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-
-}
-// 摇动结束
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-
-}
+//// 开始摇动
+//- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+//
+//}
+//// 取消摇动
+//- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+//
+//}
+//// 摇动结束
+//- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+//
+//}
 -(NSArray*)dictSource{
     if (!_dictSource) {
         _dictSource = [GoodKFCModel parseWithDict:NULL];
@@ -141,8 +141,6 @@ static const NSInteger page = 1;//标签数量
     }];
 }
 
-
-
 -(HistoryArchive*)historyArchive{
     if (!_historyArchive) {
         _historyArchive = [[HistoryArchive alloc]init];
@@ -156,7 +154,6 @@ static const NSInteger page = 1;//标签数量
     }
     return _fileArchiveZip;
 }
-
 
 -(void)matchDataSource:(NSArray*)obj{
     NSMutableArray*list = [[NSMutableArray alloc] init];
@@ -184,8 +181,6 @@ static const NSInteger page = 1;//标签数量
     [self.scrollView addSubview:account];
 }
 
-
-
 -(void)didSelectRowAtIndexPath:(PlanAccountView *)didSelectRowAtIndexPath IndexPath:(NSInteger)IndexPath{
     switch (IndexPath) {
         case 0:{//我的资料
@@ -207,11 +202,8 @@ static const NSInteger page = 1;//标签数量
     }
 }
 
-
 -(void)showActionSheet{
-    
     UIActionSheet *sheet =[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"回到第3层",@"回到第一层",@"进入第5层", nil];
-    
     [sheet showInView:self.view];
 }
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -235,7 +227,6 @@ static const NSInteger page = 1;//标签数量
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
 -(BOOL)isExist{
     NSString *timer = [[NSUserDefaultsManager shareManager]getApresentTimer];
     DEBUG_NSLog(@"timer==%@",timer);
@@ -253,7 +244,6 @@ static const NSInteger page = 1;//标签数量
     NSString *nowaday = [presentFormat stringFromDate:[NSDate date]];
     return nowaday;
 }
-
 
 -(void)flashsale:(GoodlistView *)flashsale message:(NSInteger)message{
      DEBUG_NSLog(@"message=%ld",(long)message);
@@ -277,7 +267,6 @@ static const NSInteger page = 1;//标签数量
      [DFCLocalNotificationCenter sendLocalNotification:@"加入购物车成功" subTitle:nil body:@"加入购物车"];
 //    [[DFCShowMessage sharedView]showMessage:@"加入购物车成功" duration:2.0f];
 }
-
 
 -(void)btnFileFn:(UISegmentedControl *)sender{
     NSInteger index = sender.selectedSegmentIndex;
@@ -336,7 +325,9 @@ static const NSInteger page = 1;//标签数量
 }
 
 -(void)initNavigationView{
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navigation_bag"] style: UIBarButtonItemStylePlain target:self action:@selector(barMenu)];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"btn_search_baritem"] style: UIBarButtonItemStylePlain target:self action:@selector(search)];
     
     UISegmentedControl*control= [[UISegmentedControl alloc]initWithItems:@[@"首页",@"个人中心"]];
@@ -546,27 +537,27 @@ static NSUInteger const sourceImageCompressHeight = 600;
     return smallImage;
 }
 
--(void)XXX{
-    //将Dictionary转成Json
-    NSMutableDictionary *jsonDic = [NSMutableDictionary dictionary];
-    NSMutableDictionary *alert = [NSMutableDictionary dictionary];
-    NSMutableDictionary *aps = [NSMutableDictionary dictionary];
-    [alert setObject:@"a msg come!" forKey:@"body"];
-    [aps setObject:alert forKey:@"alert"];
-    [aps setObject:@"3" forKey:@"bage" ];
-    [aps setObject:@"def.mp3" forKey:@"sound"];
-    [jsonDic setObject:aps forKey:@"aps"];
-    
-    NSString *strJson = [jsonDic JSONString];
-    NSLog(@"temp is :%@",strJson);
-    
-    
-    //将json转成Dictionary
-    NSData *data = [strJson dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *newDic = [data objectFromJSONData];
-    NSLog(@"newDic= %@",newDic);
-    
-}
+//-(void)XXX{
+//    //将Dictionary转成Json
+//    NSMutableDictionary *jsonDic = [NSMutableDictionary dictionary];
+//    NSMutableDictionary *alert = [NSMutableDictionary dictionary];
+//    NSMutableDictionary *aps = [NSMutableDictionary dictionary];
+//    [alert setObject:@"a msg come!" forKey:@"body"];
+//    [aps setObject:alert forKey:@"alert"];
+//    [aps setObject:@"3" forKey:@"bage" ];
+//    [aps setObject:@"def.mp3" forKey:@"sound"];
+//    [jsonDic setObject:aps forKey:@"aps"];
+//    
+//    NSString *strJson = [jsonDic JSONString];
+//    NSLog(@"temp is :%@",strJson);
+//    
+//    
+//    //将json转成Dictionary
+//    NSData *data = [strJson dataUsingEncoding:NSUTF8StringEncoding];
+//    NSDictionary *newDic = [data objectFromJSONData];
+//    NSLog(@"newDic= %@",newDic);
+//    
+//}
 
 
 //-(void)xxx{

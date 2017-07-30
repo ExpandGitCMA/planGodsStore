@@ -11,9 +11,9 @@
 @implementation UITabBarController (WZBTabBarViewController)
 - (void)viewWillLayoutSubviews {
     
-    CGRect tabFrame = self.tabBar.frame;
-    tabFrame.size.height = 100;
-    tabFrame.origin.y = self.view.frame.size.height - 100;
-    self.tabBar.frame = tabFrame;
+//    CGRect tabFrame = self.tabBar.frame;
+//    tabFrame.size.height = 100;
+//    tabFrame.origin.y = self.view.frame.size.height - 100;
+//    self.tabBar.frame = tabFrame;
 }
 @end

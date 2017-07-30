@@ -14,7 +14,7 @@
 #import "NSUserDefaultsManager.h"
 #import "DFCLaunchView.h"
 #import <UserNotifications/UserNotifications.h>
-#import "LauncScreen.h"
+
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
@@ -24,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //禁止手机睡眠
-    [UIApplication sharedApplication].idleTimerDisabled = YES;
+//    [UIApplication sharedApplication].idleTimerDisabled = YES;
     [self p_initLocalNotification:application];
     [self applicationDidFinishLaunch];
     [self registerReachability];
