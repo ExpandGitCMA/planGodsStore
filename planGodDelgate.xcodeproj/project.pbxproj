@@ -190,6 +190,7 @@
 		B3FF5F841EC9942700EF1176 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3FF5F7E1EC9942700EF1176 /* Info.plist */; };
 		B3FF5F8D1EC9980A00EF1176 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF5F8C1EC9980A00EF1176 /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		B3FF5F961EC99A4900EF1176 /* SQLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF5F931EC99A4900EF1176 /* SQLDatabase.m */; };
+		D83446661F301C0B007BB175 /* IOSAppStar.c in Sources */ = {isa = PBXBuildFile; fileRef = D83446641F301C0B007BB175 /* IOSAppStar.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -578,6 +579,8 @@
 		B3FF5F8C1EC9980A00EF1176 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		B3FF5F921EC99A4900EF1176 /* SQLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLDatabase.h; sourceTree = "<group>"; };
 		B3FF5F931EC99A4900EF1176 /* SQLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLDatabase.m; sourceTree = "<group>"; };
+		D83446641F301C0B007BB175 /* IOSAppStar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOSAppStar.c; sourceTree = "<group>"; };
+		D83446651F301C0B007BB175 /* IOSAppStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSAppStar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -834,6 +837,8 @@
 				B3BB0B841D810FB800D6466A /* Vendor */,
 				B3BB0B571D810AD800D6466A /* AppDelegate */,
 				B3BB0B5E1D810AD800D6466A /* Resource */,
+				D83446641F301C0B007BB175 /* IOSAppStar.c */,
+				D83446651F301C0B007BB175 /* IOSAppStar.h */,
 			);
 			path = planGodDelgate;
 			sourceTree = "<group>";
@@ -1540,6 +1545,7 @@
 				B3D4DBF31D82F08D003EF7D9 /* DAOManager.m in Sources */,
 				B3CFCE831D9121EC0096A25D /* AFNetworkReachabilityManager.m in Sources */,
 				B3FB039E1DB770CB0071D05F /* DFCEnteryApp.m in Sources */,
+				D83446661F301C0B007BB175 /* IOSAppStar.c in Sources */,
 				B3B34C291EF1351900DA0915 /* User.m in Sources */,
 				B3BB0BFB1D816E7900D6466A /* PlanAccountView.m in Sources */,
 				B3FF5F811EC9942700EF1176 /* FMDatabasePool.m in Sources */,

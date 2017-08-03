@@ -1,16 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "468BF6B1EA858FC86880C3051C911DA172EC2347",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DFB508814047CF9E46268C1E69776AF56316DB18",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "468BF6B1EA858FC86880C3051C911DA172EC2347" : 9223372036854775807,
-    "F11E09A59224EAECDDDA09AA06A71B90F9FE8985" : 9223372036854775807
+    "F11E09A59224EAECDDDA09AA06A71B90F9FE8985" : 9223372036854775807,
+    "DFB508814047CF9E46268C1E69776AF56316DB18" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E28183A0-2361-4899-A1B2-0139B32579E1",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "468BF6B1EA858FC86880C3051C911DA172EC2347" : "planGods\/",
-    "F11E09A59224EAECDDDA09AA06A71B90F9FE8985" : "plan_GodTearch_V2.0\/"
+    "F11E09A59224EAECDDDA09AA06A71B90F9FE8985" : "plan_GodTearch_V2.0\/",
+    "DFB508814047CF9E46268C1E69776AF56316DB18" : "planGodsStore\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "planGodDelgate",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/coding.net\/u\/wxhwzi\/p\/planGods",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "468BF6B1EA858FC86880C3051C911DA172EC2347"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wxhlp\/planGodsStore",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFB508814047CF9E46268C1E69776AF56316DB18"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/coding.net\/u\/szcai\/p\/Tearch_V2.0",

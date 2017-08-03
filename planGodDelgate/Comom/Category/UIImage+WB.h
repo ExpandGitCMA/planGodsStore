@@ -36,4 +36,11 @@
  */
 - (UIImage*)scaleToSize:(CGSize)size;
 
+/**
+ *  返回指定尺寸和圆角的图片
+ */
++ (id)createRoundedRectImage:(UIImage*)image size:(CGSize)size radius:(NSInteger)r;
+
+//裁剪Image圆角
+- (UIImage *)circleImage;
 @end
