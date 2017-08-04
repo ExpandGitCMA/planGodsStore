@@ -12,6 +12,8 @@
 
 static NSString * const kHistoryArchiveKey = @"historyArchive";
 @implementation HistoryArchive
+
+
 - (NSString *)cacheDir{
     NSString *addressPath=[NSString stringWithFormat:@"%@/%@",[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject],@"cache1"];
     return addressPath;
