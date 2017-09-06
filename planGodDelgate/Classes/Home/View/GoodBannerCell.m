@@ -59,10 +59,13 @@ static NSUInteger  const SGMaxSections = 100;
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (!self.arraySource.count){
-         return 1;
+    NSInteger  imageCount  ;
+    if (self.arraySource.count) {
+        imageCount = _arraySource.count;
+    }else{
+        imageCount = 1;
     }
-    return self.arraySource.count;
+    return  imageCount;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -92,7 +95,7 @@ static NSUInteger  const SGMaxSections = 100;
 }
 
 -(void)addTimer{
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.5f target:self selector:@selector(nextpages) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:4.5f target:self selector:@selector(nextpages) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     self.timer = timer ;
 }

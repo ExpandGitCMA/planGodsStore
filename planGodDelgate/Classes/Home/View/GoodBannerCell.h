@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GoodBannerCell : UITableViewCell
-
+/** 是否有数据循环,默认Yes */
+@property(nonatomic,assign) BOOL  autoLoop;
 @end

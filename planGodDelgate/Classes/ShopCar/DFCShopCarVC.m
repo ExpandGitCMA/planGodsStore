@@ -51,7 +51,7 @@
 }
 
 -(UIButton*)shop{
-    _shop = [[UIButton alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-shopWidth)/2, (SCREEN_HEIGHT/2+shopHeight), shopWidth, shopHeight)];
+    _shop = [[UIButton alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-shopWidth)/2, (SCREEN_HEIGHT/2+65), shopWidth, shopHeight)];
     [_shop setTitle:@"去购物" forState:UIControlStateNormal];
     [_shop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _shop.titleLabel.font = [UIFont systemFontOfSize:16];

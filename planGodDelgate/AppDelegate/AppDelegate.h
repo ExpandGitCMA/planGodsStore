@@ -1,7 +1,7 @@
 //
 //  AppDelegate.h
 //  planGodDelgate
-//
+//  SmallGodShare 
 //  Created by ZeroSmell on 16/9/8.
 //  Copyright © 2016年 DFC. All rights reserved.
 //

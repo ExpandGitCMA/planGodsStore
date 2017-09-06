@@ -57,12 +57,18 @@
     _tableView.dataSource = self;
     _tableView.backgroundColor=[UIColor whiteColor];
     _tableView.tableFooterView = [UIView new];
+    _tableView.contentOffset = CGPointMake(0, self.contentInset.top);
+    _tableView.contentInset  = self.contentInset;
+    _tableView.scrollIndicatorInsets = self.contentInset;
     [_tableView registerNib:[UINib nibWithNibName:@"GoodlistCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [_tableView setSeparatorColor:UIColorFromRGB(DefaulColor)];//分割线
     [self addSubview:_tableView];
     [self setButTop];
 }
 
+- (UIEdgeInsets)contentInset {
+    return UIEdgeInsetsMake(0, 0, 64, 0);
+}
 
 
 -(void)flashsale{
@@ -111,7 +117,13 @@
 #pragma mark-向上返回按钮
 -(void)btnTopAction:(UIButton *)btn{
     _btnTop.hidden=YES;
-    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    //[_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+     [self scrollToTopAnimated:YES];
+}
+- (void)scrollToTopAnimated:(BOOL)animated {
+    CGPoint off = self.tableView.contentOffset;
+    off.y = 0 - self.tableView.contentInset.top;
+    [self.tableView setContentOffset:off animated:animated];
 }
 //开始拖拽视图
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
