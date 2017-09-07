@@ -60,6 +60,9 @@ static const  NSInteger  toHideRow;
     _tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.contentOffset = CGPointMake(0, self.contentInset.top);
+    _tableView.contentInset  = self.contentInset;
+    _tableView.scrollIndicatorInsets = self.contentInset;
     _tableView.backgroundColor=[UIColor whiteColor];
     _tableView.tableFooterView = [UIView new];
     [_tableView registerNib:[UINib nibWithNibName:@"GoodBannerCell" bundle:nil] forCellReuseIdentifier:@"BannerCell"];
@@ -205,7 +208,17 @@ static const  NSInteger  toHideRow;
 #pragma mark-向上返回按钮
 -(void)btnTopAction:(UIButton *)btn{
     _btnTop.hidden=YES;
-    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+//    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    [self scrollToTopAnimated:YES];
+}
+
+- (UIEdgeInsets)contentInset {
+    return UIEdgeInsetsMake(0, 0, 49, 0);
+}
+- (void)scrollToTopAnimated:(BOOL)animated {
+    CGPoint off = self.tableView.contentOffset;
+    off.y = 0 - self.contentInset.top;
+    [self.tableView setContentOffset:off animated:animated];
 }
 
 //开始拖拽视图
@@ -226,15 +239,31 @@ static const  NSInteger  toHideRow;
         _endScroll = scrollView.contentOffset.y;
     }
     //往上拉 并且 滚动视图超过一个屏幕
+    /**************增加向上返回按钮动画效果**************/
     if(_startScroll - _endScroll>10 && _tableView.contentOffset.y>1000){
-        [UIView animateWithDuration:0.25 animations:^{
-           _btnTop.hidden = NO;
-        }];
+//        [UIView animateWithDuration:0.25 animations:^{
+//           _btnTop.hidden = NO;
+//        }];
+        
+        [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            _btnTop.hidden = NO;
+           _btnTop.frame = CGRectMake(self.frame.size.width-50, self.frame.size.height-50, 40.f, 40.f);
+        } completion:nil];
+        
+        
     }else{
-        [UIView animateWithDuration:0.25 animations:^{
+//        [UIView animateWithDuration:0.25 animations:^{
+//            _btnTop.hidden = YES;
+//        }];
+        
+        [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            _btnTop.frame = CGRectMake(self.frame.size.width-50, self.frame.size.height, 40, 40);
+        } completion:^(BOOL finished) {
             _btnTop.hidden = YES;
         }];
     }
+    
+
     
 }
 

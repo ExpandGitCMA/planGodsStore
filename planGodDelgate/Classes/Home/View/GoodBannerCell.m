@@ -60,10 +60,10 @@ static NSUInteger  const SGMaxSections = 100;
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     NSInteger  imageCount  ;
-    if (self.arraySource.count) {
-        imageCount = _arraySource.count;
-    }else{
+    if (self.arraySource.count==0) {
         imageCount = 1;
+    }else{
+        imageCount = _arraySource.count;
     }
     return  imageCount;
 }
