@@ -37,6 +37,7 @@
 		B33F12F41EB3130600AFF8A2 /* NSString+NSStringBlankString.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F12F31EB3130600AFF8A2 /* NSString+NSStringBlankString.m */; };
 		B33F12FD1EB34B2C00AFF8A2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B33F12FC1EB34B2C00AFF8A2 /* Person.m */; };
 		B34ACF531EADD391002783C1 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B34ACF521EADD391002783C1 /* Resource.bundle */; };
+		B34B065B1F7107030023D90F /* ZeroBoxAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B065A1F7107030023D90F /* ZeroBoxAnimationView.m */; };
 		B34CA8711EEA9C1A005F60D1 /* NSObject+NotNull.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8701EEA9C1A005F60D1 /* NSObject+NotNull.m */; };
 		B34CA8741EEAA316005F60D1 /* UIButton+ActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8731EEAA316005F60D1 /* UIButton+ActionButton.m */; };
 		B34CA8771EEAA5F2005F60D1 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B34CA8761EEAA5F2005F60D1 /* UIColor+RandomColor.m */; };
@@ -299,6 +300,8 @@
 		B33F12FB1EB34B2C00AFF8A2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		B33F12FC1EB34B2C00AFF8A2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		B34ACF521EADD391002783C1 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		B34B06591F7107030023D90F /* ZeroBoxAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeroBoxAnimationView.h; sourceTree = "<group>"; };
+		B34B065A1F7107030023D90F /* ZeroBoxAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZeroBoxAnimationView.m; sourceTree = "<group>"; };
 		B34CA86F1EEA9C1A005F60D1 /* NSObject+NotNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NotNull.h"; sourceTree = "<group>"; };
 		B34CA8701EEA9C1A005F60D1 /* NSObject+NotNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NotNull.m"; sourceTree = "<group>"; };
 		B34CA8721EEAA316005F60D1 /* UIButton+ActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ActionButton.h"; sourceTree = "<group>"; };
@@ -678,6 +681,15 @@
 			path = Runtime_Objct;
 			sourceTree = "<group>";
 		};
+		B34B06581F7106EA0023D90F /* ZeroBoxAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				B34B06591F7107030023D90F /* ZeroBoxAnimationView.h */,
+				B34B065A1F7107030023D90F /* ZeroBoxAnimationView.m */,
+			);
+			path = ZeroBoxAnimation;
+			sourceTree = "<group>";
+		};
 		B373B65A1E973CBD00DEE23D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,6 +1018,7 @@
 		B3BB0B841D810FB800D6466A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B34B06581F7106EA0023D90F /* ZeroBoxAnimation */,
 				B381F1081EF1330200D9EB4B /* MJExtension */,
 				B3FF5F721EC993F800EF1176 /* FMDB */,
 				B3CD58821EC5B0D900DC6887 /* JSONKit */,
@@ -1600,6 +1613,7 @@
 				B381F1261EF1330200D9EB4B /* NSObject+MJCoding.m in Sources */,
 				B34E80561EC4169C004FA664 /* NSViewCopy.m in Sources */,
 				B3C13FF21D86B4F400463689 /* DFCShopCarVC.m in Sources */,
+				B34B065B1F7107030023D90F /* ZeroBoxAnimationView.m in Sources */,
 				B33367391F011C83000B3A9C /* UILabel+HMObjcSugar.m in Sources */,
 				B3FF5F821EC9942700EF1176 /* FMDatabaseQueue.m in Sources */,
 			);

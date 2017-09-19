@@ -180,11 +180,12 @@ static NSUInteger  const SGMaxSections = 100;
 {
     if (!newSuperview) {
         [self removeTimer];
+        [self freeCollectionView];
     }
 }
 
 //解决当timer释放后 回调scrollViewDidScroll时访问野指针导致崩溃
-- (void)dealloc {
+- (void)freeCollectionView{
     _collectionView.delegate = nil;
     _collectionView.dataSource = nil;
 }

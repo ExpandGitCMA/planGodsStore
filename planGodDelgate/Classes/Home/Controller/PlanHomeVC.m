@@ -17,8 +17,8 @@
 //以下操作都需要导入头文件
 
 #import <Photos/Photos.h>
-
-@interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate,UIGestureRecognizerDelegate>
+#import "ZeroBoxAnimationView.h"
+@interface PlanHomeVC ()<UIScrollViewDelegate,GoodlistDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,DFCAccountDelegate,UIActionSheetDelegate,UIGestureRecognizerDelegate,ZeroBoxViewDelegate>
 @property(nonatomic,retain)HomeDataSourceViewModel *dataSourceViewModel;
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,weak)UISegmentedControl * control;
@@ -30,6 +30,7 @@
 @property(nonatomic,strong)HistoryArchive *historyArchive;
 @property(nonatomic,strong)FileArchiveZip *fileArchiveZip;
 @property(nonatomic,copy)NSViewCopy *viewCopy;
+@property(nonatomic,strong)ZeroBoxAnimationView *zeroBoxView;
 
 @end
 static const NSInteger page = 1;//标签数量
@@ -76,6 +77,7 @@ static const NSInteger page = 1;//标签数量
     [self dictSource];
 
     [self.fileArchiveZip initWithPath];
+    [self zeroBoxView];
 }
 
 // 开始摇动
@@ -184,7 +186,12 @@ static const NSInteger page = 1;//标签数量
     [self.scrollView addSubview:account];
 }
 
-
+-(ZeroBoxAnimationView*)zeroBoxView{
+    if (!_zeroBoxView) {
+        _zeroBoxView = [ZeroBoxAnimationView zeroBoxViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) delegate:self];
+    }
+    return _zeroBoxView;
+}
 
 -(void)didSelectRowAtIndexPath:(PlanAccountView *)didSelectRowAtIndexPath IndexPath:(NSInteger)IndexPath{
     switch (IndexPath) {
@@ -192,6 +199,10 @@ static const NSInteger page = 1;//标签数量
             DFCMyDataSource *dataSource = [[DFCMyDataSource alloc]init];
             [self.navigationController pushViewController:dataSource animated:YES];
         }break;
+        case 1:{
+                [_zeroBoxView showWithController:self];
+        }break;
+            
         case 5:{//拍照
             [self photoPiker];
         }break;

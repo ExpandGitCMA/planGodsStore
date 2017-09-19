@@ -69,6 +69,7 @@ static const  NSInteger  toHideRow;
     [_tableView registerNib:[UINib nibWithNibName:@"GoodFlashsaleCell" bundle:nil] forCellReuseIdentifier:@"FlashsaleCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"GoodlistCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [_tableView setSeparatorColor:UIColorFromRGB(DefaulColor)];//分割线
+
     [self addSubview:_tableView];
 }
 
